@@ -3,7 +3,7 @@
     <main class="w-full">
       <div class="w-full flex h-90/100">
 
-        <!-- Sidebar Desktop (Solo visible en Desktop) -->
+        <!-- Sidebar Desktop (Solo en Desktop) -->
         <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block">
           <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
@@ -25,19 +25,19 @@
           </div>
         </div>
 
-        <!-- Botón de Menú Móvil (Visible solo en móvil) -->
+        <!-- Botón de Menú Móvil (Solo en móvil) -->
         <button @click="menuOpen = true" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md block md:hidden">
           <MenuIcon class="w-6 h-6" />
         </button>
 
-        <!-- Menú Lateral Responsive -->
+        <!-- Menú Responsive en Móvil -->
         <Transition name="slide">
-          <div v-if="menuOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex">
-            <!-- Cerrar Menú al hacer clic fuera -->
-            <div @click="menuOpen = false" class="w-full"></div>
+          <div v-if="menuOpen" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-50 flex"
+               @click="menuOpen = false"
+               @touchstart="menuOpen = false">
 
             <!-- Contenedor del Menú -->
-            <div class="w-72 bg-black text-white p-6 shadow-lg z-50">
+            <div class="w-72 bg-black text-white p-6 shadow-lg z-50 relative" @click.stop>
               <button @click="menuOpen = false" class="absolute top-4 right-4 text-white">
                 ✖
               </button>
@@ -56,6 +56,7 @@
                 </ul>
               </nav>
             </div>
+
           </div>
         </Transition>
 
