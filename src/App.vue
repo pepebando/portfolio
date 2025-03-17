@@ -3,8 +3,8 @@
     <main class="w-full">
       <div class="w-full flex h-90/100">
 
-      <!-- Botón de Menú Responsive -->
-        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block"  >
+        <!-- Sidebar Desktop (Solo visible en Desktop) -->
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block">
           <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
             <span>Home</span>
@@ -24,15 +24,24 @@
             </ul>
           </div>
         </div>
-        
-        <!-- Botón de Menú -->
-        <div class="relative block md:hidden">
-          <button @click="menuOpen = !menuOpen" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md">
-            <MenuIcon class="w-6 h-6" />
-          </button>
-          <Transition name="slide">
-            <div v-if="menuOpen" class="fixed inset-y-0 left-0 w-72 bg-black text-white p-6 shadow-lg z-40">
-              
+
+        <!-- Botón de Menú Móvil (Visible solo en móvil) -->
+        <button @click="menuOpen = true" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md block md:hidden">
+          <MenuIcon class="w-6 h-6" />
+        </button>
+
+        <!-- Menú Lateral Responsive -->
+        <Transition name="slide">
+          <div v-if="menuOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex">
+            <!-- Cerrar Menú al hacer clic fuera -->
+            <div @click="menuOpen = false" class="w-full"></div>
+
+            <!-- Contenedor del Menú -->
+            <div class="w-72 bg-black text-white p-6 shadow-lg z-50">
+              <button @click="menuOpen = false" class="absolute top-4 right-4 text-white">
+                ✖
+              </button>
+
               <div class="flex items-center space-x-3 mb-6">
                 <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full" />
                 <div>
@@ -47,9 +56,9 @@
                 </ul>
               </nav>
             </div>
-          </Transition>
-        </div>
-        
+          </div>
+        </Transition>
+
         <!-- Transición entre Secciones -->
         <Transition name="fade" mode="out-in">
           <component :is="currentComponent" :key="PerfilActual" />
@@ -65,24 +74,23 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-
 import SidebarCard from '/src/components/SidebarCard.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
 import PlayBar from '/src/components/PlayBar.vue';
 import ContactForm from '/src/components/ContactForm.vue';
-import { HomeIcon,  LibraryIcon,MailIcon,MenuIcon} from 'lucide-vue-next';
+import { HomeIcon, LibraryIcon, MailIcon, MenuIcon } from 'lucide-vue-next';
 
 const sidebararray = ref([
-{ title: 'Unreal Engine', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
-{ title: 'Web', image: "https://img.icons8.com/cute-clipart/64/web.png" },
-{ title: 'Augmented Reality', image: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-augmented-reality-new-media-flaticons-lineal-color-flat-icons-2.png" },
-{ title: 'Mixed Reality', image: "https://cdn.brandfetch.io/idWvz5T3V7/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" },
-{ title: 'Virtual Reality', image: "https://img.icons8.com/plasticine/100/virtual-reality.png" },
-{ title: 'Videogames', image: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-gaming-live-streaming-flaticons-flat-flat-icons.png" },
-{ title: 'Python', image: "https://cdn.brandfetch.io/idbpOFBgcc/w/398/h/398/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" },
-{ title: 'APPs', image: "https://img.icons8.com/color/48/apple-app-store--v3.png" },
-{ title: 'Others', image: "https://cdn.brandfetch.io/id93sjCX4f/w/300/h/300/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" }
+  { title: 'Unreal Engine', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
+  { title: 'Web', image: "https://img.icons8.com/cute-clipart/64/web.png" },
+  { title: 'Augmented Reality', image: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-augmented-reality-new-media-flaticons-lineal-color-flat-icons-2.png" },
+  { title: 'Mixed Reality', image: "https://cdn.brandfetch.io/idWvz5T3V7/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" },
+  { title: 'Virtual Reality', image: "https://img.icons8.com/plasticine/100/virtual-reality.png" },
+  { title: 'Videogames', image: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-gaming-live-streaming-flaticons-flat-flat-icons.png" },
+  { title: 'Python', image: "https://cdn.brandfetch.io/idbpOFBgcc/w/398/h/398/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" },
+  { title: 'APPs', image: "https://img.icons8.com/color/48/apple-app-store--v3.png" },
+  { title: 'Others', image: "https://cdn.brandfetch.io/id93sjCX4f/w/300/h/300/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" }
 ]);
 
 const PerfilActual = ref("Home");
