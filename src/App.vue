@@ -17,6 +17,7 @@
             <MailIcon class="w-6 h-6" />
             <span>Contact</span>
           </div>
+          
           <div class="mt-7">
             <h2 class="text-lg font-semibold">Categories</h2>
             <ul class="mt-1 space-y-1">
@@ -59,7 +60,7 @@
             </div>  
             <h1 class="text-5xl text-center p-10 mt-15">Categories</h1>
             <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
-              <SideBarResponsive v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+              <SideBarResponsive  v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
             </div>
             
           </div>
@@ -74,23 +75,22 @@
     </div>
     
     <!-- Barra de Reproducción -->
-    <PlayBar class=" hidden lg:flex fixed " />
+    
     
   </main>
 </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, provide} from 'vue';
 
 import SideBarResponsive from '/src/components/SideBarResponsive.vue';
 import SidebarCard from '/src/components/SidebarCard.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
-import PlayBar from '/src/components/PlayBar.vue';
 import ContactForm from '/src/components/ContactForm.vue';
+import IndividualProject from '/src/components/IndividualProject.vue';
 
-import { HomeIcon, LibraryIcon, MailIcon, MenuIcon,XIcon } from 'lucide-vue-next';
 
 const sidebararray = ref([
 { title: 'Unreal Engine', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
@@ -113,9 +113,16 @@ const currentComponent = computed(() => {
     case "Projects": return PortfolioUI;
     case "Contact": return ContactForm;
     case "Home": return PerfilUI;
+    case "IndividualProject": return IndividualProject;
     default: return PerfilUI;
   }
 });
+
+const changePage = (newPage) => {
+  PerfilActual.value= newPage;
+  console.log(`Page changed to: ${newPage}`);
+};
+provide("changePage",changePage)
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <div @mouseover="show = true" @mouseleave="show = false" class="relative group p-5 cursor-pointer rounded-lg overflow-hidden hover:bg-greyspotclear p-2">
+  <div @click="changePage('IndividualProject')" @mouseover="show = true" @mouseleave="show = false" class="relative group p-5 cursor-pointer rounded-lg overflow-hidden hover:bg-greyspotclear p-2">
     <!-- Imagen -->
     <img :src="image" alt="Cover"   class="w-full h-40 object-cover rounded-lg " />
     
@@ -20,7 +20,11 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
+import { inject } from 'vue';
+
 const show = ref(false);
+
+const changePage = inject('changePage');
 
 import { PlayIcon } from 'lucide-vue-next';
 defineProps<{ title: string, image: string ,description: string, color:string}>();
