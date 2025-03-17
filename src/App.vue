@@ -38,33 +38,30 @@
           
           <!-- Contenedor del Menú -->
           
-          <div class="f-right w-full bg-black text-white p-6 shadow-lg z-50 relative p-15" @click.stop>
+          <div class="w-full bg-black text-white p-6 shadow-lg z-50 relative p-15" @click.stop>
             <button @click="menuOpen = false" class="absolute top-4 left-4 text-white w-12 h-12 z-999">
               <XIcon class="w-12 h-12" />
             </button>  
-            <nav class="space-y-4">
-              <ul class="mt-1 space-y-1">
-                <li class="p-5">
-                  <div @click="PerfilActual = 'Home'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
-                    <HomeIcon class="w-12 h-12" />
-                    <span>Home</span>
-                  </div>
-                </li>
-                <li class="p-5">
-                  <div @click="PerfilActual = 'Projects'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
-                    <LibraryIcon class="w-12 h-12" />
-                    <span>All my projects</span>
-                  </div>
-                </li>
-                <li class="p-5">
-                  <div @click="PerfilActual = 'Contact'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
-                    <MailIcon class="w-12 h-12" />
-                    <span>Contact</span>
-                  </div>
-                </li>
-                <SideBarResponsive v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
-              </ul>
-            </nav>
+            <h1 class="text-5xl text-center p-10">Menu</h1>
+            <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
+              <div @touchstart="PerfilActual = 'Home'" class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+                <HomeIcon class="w-25 h-25" />
+                <h1 class="text-xl text-center ">Home</h1>
+              </div>
+              <div @touchstart="PerfilActual = 'Projects'" class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+                <LibraryIcon class="w-25 h-25" />
+                <h1 class="text-xl text-center "> All my projects</h1>
+              </div>
+              <div @touchstart="PerfilActual = 'Contact'" class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+                <MailIcon class="w-25 h-25" />
+                <h1 class="text-xl text-center ">Contact</h1>
+              </div>
+            </div>  
+            <h1 class="text-5xl text-center p-10">Categories</h1>
+            <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
+              <SideBarResponsive v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+            </div>
+            
           </div>
           
         </div>

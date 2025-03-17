@@ -1,12 +1,10 @@
-<template>
-    <li class="cursor-pointer p-5">            
-        <div class=" flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear ">
-            <img :src="image" class="size-12 shrink-0"  alt="Logo" />
+<template>           
+        <div class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+            <img :src="image" class="size-25 shrink-0"  alt="Logo" />
             <div>
-                <div class="text-xl font-medium text-black text-white " >{{ title }}</div>
+                <div class="text-2xl font-medium text-black text-white text-center p-2" >{{ title }}</div>
             </div>
         </div>
-    </li>
 </template>
 
 <script setup lang="ts">
