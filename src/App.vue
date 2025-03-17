@@ -3,7 +3,7 @@
     <main class="w-full">
       <div class="w-full flex lg:h-90/100">
         <!-- Sidebar Desktop -->
-        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll ">
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg  ">
           <router-link to="/" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
             <span>Home</span>
