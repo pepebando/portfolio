@@ -1,7 +1,7 @@
 <template>
     <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bggreengradient via-black to-black rounded-lg scrollbar overflow-y-scroll h-screen flex justify-center items-center">
         <!-- Encabezado con Fondo Degradado -->    
-        <div class="max-w-6/10 mx-auto p-6  text-white rounded-lg  ">
+        <div class="max-w-10/10 lg:max-w-6/10 mx-auto p-6  text-white rounded-lg  ">
             <h1 class="text-5xl font-bold text-center mb-2">Ready to work with you</h1>
             <p class="text-sm text-gray-400 mt-2 mb-4">Send me a message, and i will respond you as soon as possible</p>
             <!-- Formulario -->
