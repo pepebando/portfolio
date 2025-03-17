@@ -1,5 +1,25 @@
 <template>
-    <div class="relative">
+    <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block" " >
+        <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
+            <HomeIcon class="w-6 h-6" />
+            <span>Home</span>
+        </div>
+        <div @click="PerfilActual = 'Projects'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
+            <LibraryIcon class="w-6 h-6" />
+            <span>All my projects</span>
+        </div>
+        <div @click="PerfilActual = 'Contact'" class="flex items-center space-x-2 cursor-pointer transition-opacity">
+            <MailIcon class="w-6 h-6" />
+            <span>Contact</span>
+        </div>
+        <div class="mt-7">
+            <h2 class="text-lg font-semibold">Categories</h2>
+            <ul class="mt-1 space-y-1">
+                <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+            </ul>
+        </div>
+    </div>
+    <div class="relative block md:hidden">
         <!-- Botón de Menú -->
         <button @click="menuOpen = !menuOpen" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md">
             <MenuIcon class="w-6 h-6" />
@@ -21,7 +41,7 @@
                 <!-- Opciones del Menú -->
                 <nav class="space-y-4">
                     <ul>
-                    <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+                        <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
                     </ul>
                 </nav>
             </div>

@@ -3,8 +3,7 @@
     <main class="w-full">
       
       <div class="w-full flex h-90/100">
-        <SidebarUI class="hidden md:block"  />
-        <SidebarResponsive class="block md:hidden"/>
+        <SidebarResponsive />
         <!-- Transición entre Secciones -->
         <Transition name="fade" mode="out-in">
           <component :is="currentComponent" :key="PerfilActual" />
@@ -22,7 +21,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-import SidebarUI from '/src/components/SidebarUI.vue';
+
 import SidebarResponsive from '/src/components/SidebarResponsive.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
