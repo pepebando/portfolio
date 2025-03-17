@@ -5,5 +5,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [vue(),tailwindcss()],
-  base:'https://pepebando.github.io/'
+  base:'https://pepebando.github.io/',
+  publicPath: '/'
 })
