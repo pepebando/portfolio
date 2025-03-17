@@ -193,7 +193,7 @@ const activeTab = ref(tabs[0]);
 const value = ref('0');
 onMounted(async () => {
   try {
-    const response = await fetch('http://localhost:5173/dataIndividualProject.json');
+    const response = await fetch('https://pepebando.github.io/dataIndividualProject.json');
     console.log("🔍 Respuesta del servidor:", response);
     if (!response.ok) {
       throw new Error("No se pudo cargar el archivo JSON");
