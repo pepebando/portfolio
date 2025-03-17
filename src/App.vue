@@ -44,8 +44,25 @@
             </button>  
             <nav class="space-y-4">
               <ul>
-
-                <SidebarResponsive  v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+                <li class="p-5">
+                  <div @click="PerfilActual = 'Home'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+                    <HomeIcon class="w-12 h-12" />
+                    <span>Home</span>
+                  </div>
+                </li>
+                <li class="p-5">
+                  <div @click="PerfilActual = 'Projects'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+                    <LibraryIcon class="w-12 h-12" />
+                    <span>All my projects</span>
+                  </div>
+                </li>
+                <li class="p-5">
+                  <div @click="PerfilActual = 'Contact'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
+                    <MailIcon class="w-12 h-12" />
+                    <span>Contact</span>
+                  </div>
+                </li>
+                
               </ul>
             </nav>
           </div>
