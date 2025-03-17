@@ -74,7 +74,7 @@
     </div>
     
     <!-- Barra de Reproducción -->
-    <PlayBar class="fixed" />
+    <PlayBar class=" hidden lg:flex fixed " />
     
   </main>
 </div>
