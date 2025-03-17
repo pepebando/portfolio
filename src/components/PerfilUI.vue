@@ -24,7 +24,7 @@
                 <SocialMediaPercilUI v-for="(social, index) in socialmedia" :key="index" :number="index + 1" :title="social.title" :description="social.description" :duration="social.duration" :image="social.image" />
             </div>
         </section>
-        <div class="h-50"></div>
+        <div class="h-50 block lg:hidden"></div>
     </div>
 
 </template>
