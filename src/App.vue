@@ -1,8 +1,9 @@
 <template>
   <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
     <main class="w-full">
-      <!-- Botón de Menú Responsive -->
       <div class="w-full flex h-90/100">
+
+      <!-- Botón de Menú Responsive -->
         <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block"  >
           <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
@@ -70,7 +71,7 @@ import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
 import PlayBar from '/src/components/PlayBar.vue';
 import ContactForm from '/src/components/ContactForm.vue';
-import { HomeIcon,  LibraryIcon,MailIcon } from 'lucide-vue-next';
+import { HomeIcon,  LibraryIcon,MailIcon,MenuIcon} from 'lucide-vue-next';
 
 const sidebararray = ref([
 { title: 'Unreal Engine', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
