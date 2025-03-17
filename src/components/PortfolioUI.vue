@@ -10,7 +10,7 @@
     <div class="grid grid-cols-3  lg:grid-cols-6 gap-4 mt-4">
       <ProjectCard v-for="(project, index) in projectarray" :key="index" :title="project.title" :image="project.image" :description="project.description" :color="project.color"/>
     </div>
-    <div class="h-50 block lg:hidden"></div>z
+    <div class="h-50 block lg:hidden"></div>
   </div>
 
   </template>
