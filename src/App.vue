@@ -1,9 +1,9 @@
 <template>
   <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
     <main class="w-full">
-      
+      <!-- Botón de Menú Responsive -->
       <div class="w-full flex h-90/100">
-        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block" " >
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block"  >
           <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
             <span>Home</span>
@@ -23,17 +23,15 @@
             </ul>
           </div>
         </div>
+        
+        <!-- Botón de Menú -->
         <div class="relative block md:hidden">
-          <!-- Botón de Menú -->
           <button @click="menuOpen = !menuOpen" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md">
             <MenuIcon class="w-6 h-6" />
           </button>
-          
-          <!-- Menú Desplegable -->
           <Transition name="slide">
             <div v-if="menuOpen" class="fixed inset-y-0 left-0 w-72 bg-black text-white p-6 shadow-lg z-40">
               
-              <!-- Perfil -->
               <div class="flex items-center space-x-3 mb-6">
                 <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full" />
                 <div>
@@ -42,7 +40,6 @@
                 </div>
               </div>
               
-              <!-- Opciones del Menú -->
               <nav class="space-y-4">
                 <ul>
                   <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
@@ -51,11 +48,11 @@
             </div>
           </Transition>
         </div>
+        
         <!-- Transición entre Secciones -->
         <Transition name="fade" mode="out-in">
           <component :is="currentComponent" :key="PerfilActual" />
         </Transition>
-        
       </div>
       
       <!-- Barra de Reproducción -->
@@ -68,12 +65,12 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-
+import SidebarCard from '/src/components/SidebarCard.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
 import PlayBar from '/src/components/PlayBar.vue';
 import ContactForm from '/src/components/ContactForm.vue';
-
+import { HomeIcon,  LibraryIcon,MailIcon } from 'lucide-vue-next';
 
 const sidebararray = ref([
 { title: 'Unreal Engine', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
@@ -88,6 +85,7 @@ const sidebararray = ref([
 ]);
 
 const PerfilActual = ref("Home");
+const menuOpen = ref(false);
 
 // Computed property para cambiar dinámicamente el componente
 const currentComponent = computed(() => {
@@ -115,14 +113,14 @@ const currentComponent = computed(() => {
 }
 /* Transición deslizante */
 .slide-enter-active, .slide-leave-active {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .slide-enter-from {
-    transform: translateX(-100%);
-    opacity: 0;
+  transform: translateX(-100%);
+  opacity: 0;
 }
 .slide-leave-to {
-    transform: translateX(-100%);
-    opacity: 0;
+  transform: translateX(-100%);
+  opacity: 0;
 }
 </style>
