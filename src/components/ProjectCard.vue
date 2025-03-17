@@ -4,7 +4,7 @@
     <img :src="image" alt="Cover"   class="w-full h-40 object-cover rounded-lg " />
     
     <!-- Cinta de título -->
-    <div class="  text-white px-2 py-1 rounded-md text-sm font-bold w-full" :class="color">
+    <div class="  text-white px-2 py-1 rounded-md text-3xl lg:text-sm font-bold w-full" :class="color">
       {{ title }}
     </div>
     <!-- Botón de Play -->
@@ -15,7 +15,7 @@
     </button>
   </Transition>
   <!-- Descripción -->
-  <p class="mt-3 text-gray-300 text-sm">{{ description }}</p>
+  <p class="mt-3 text-gray-300 text-3xl lg:text-sm">{{ description }}</p>
 </div>
 </template>
 <script setup lang="ts">

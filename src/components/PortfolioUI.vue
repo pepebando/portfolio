@@ -1,13 +1,12 @@
 <template>
 <div class=" w-full p-4 mb-2 px-6 bg-gradient-to-b from-bgtopgradient to-black rounded-lg scrollbar overflow-y-scroll  ">
-    <div class="flex justify-between ">
-      <h1 class="text-3xl font-bold">¡Highlights!</h1>
-      <input class="w-72 p-2 bg-gray-800 border border-gray-700 rounded" placeholder="¿Qué quieres reproducir?" />
+    <div class="flex justify-between mt-15 lg:mt-0">
+      <h1 class="text-5xl lg:text-3xl font-bold">¡Highlights!</h1>  
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+    <div class="grid grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
       <ProjectFavoriteCard v-for="(project, index) in favoritesrray" :key="index" :title="project.title" :image="project.image" />
     </div> 
-    <h1 class="text-3xl font-bold mt-7">Projects</h1>
+    <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4">
       <ProjectCard v-for="(project, index) in projectarray" :key="index" :title="project.title" :image="project.image" :description="project.description" :color="project.color"/>
     </div>
