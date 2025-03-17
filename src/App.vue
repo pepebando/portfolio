@@ -1,6 +1,7 @@
 <template>
   <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
     <main class="w-full">
+      
       <div class="w-full flex h-90/100">
         <SidebarUI class="md:block hidden"/>
         <SidebarResponsive class="block md:hidden" />
