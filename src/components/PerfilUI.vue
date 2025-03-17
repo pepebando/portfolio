@@ -13,7 +13,7 @@
         <!-- Sección de Artistas -->
         <section class="w-full p-6">
             <h2 class="text-2xl font-bold">Technical Skills</h2>
-            <div class="grid grid-cols-3  lg:grid-cols-6 overflow-x-auto space-x-1 mt-4 ">
+            <div class="grid grid-cols-3 place-items-center lg:grid-cols-6 overflow-x-auto space-x-1 mt-4 ">
                 <PerfilCardUI v-for="(project, index) in Habilidades" :key="index" :title="project.title" :image="project.image" />
             </div>
         </section>

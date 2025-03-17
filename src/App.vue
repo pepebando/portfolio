@@ -27,7 +27,7 @@
         
         <!-- Botón de Menú Móvil (Solo en móvil) -->
         <button @click="menuOpen = true" class="fixed top-4 right-5 z-50 p-2 bg-gray-800 text-white rounded-md block lg:hidden">
-          <MenuIcon class="w-12 h-12" />
+          <MenuIcon class="w-20 h-20" />
         </button>
         
         <!-- Menú Responsive en Móvil -->
@@ -40,7 +40,7 @@
           
           <div class="w-full bg-black text-white p-6 shadow-lg z-50 relative p-15" @click.stop>
             <button @click="menuOpen = false" class="absolute top-4 left-4 text-white w-12 h-12 z-999">
-              <XIcon class="w-12 h-12" />
+              <XIcon class="w-20 h-20" />
             </button>  
             <h1 class="text-5xl text-center p-10">Menu</h1>
             <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
@@ -57,7 +57,7 @@
                 <h1 class="text-xl text-center ">Contact</h1>
               </div>
             </div>  
-            <h1 class="text-5xl text-center p-10">Categories</h1>
+            <h1 class="text-5xl text-center p-10 mt-15">Categories</h1>
             <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
               <SideBarResponsive v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
             </div>
