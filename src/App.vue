@@ -63,8 +63,11 @@ const sidebararray = ref([
 <style>
 body{
   font-family: 'Inter', sans-serif;
-  -ms-overflow-style: none;
+ 
+  overflow: auto !important;
+  height: auto !important;
 }
+
 /* Transición de Fade Mejorada */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.4s ease, transform 0.4s ease;
