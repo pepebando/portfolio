@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
-    <main class="w-full">
+    <main class="w-full overflow-y-none" >
       <div class="w-full flex h-90/100">
         
         <!-- Sidebar Desktop (Solo en Desktop) -->
