@@ -5,7 +5,7 @@
             <h1 class="text-5xl font-bold text-center mb-2">Ready to work with you</h1>
             <p class="text-sm text-gray-400 mt-2 mb-4">Send me a message, and i will respond you as soon as possible</p>
             <!-- Formulario -->
-            <form @submit.prevent="submitForm" class="space-y-4">
+            <form @submit.prevent="sendEmail" class="space-y-4">
                 <!-- Nombre -->
                 <div>
                     
