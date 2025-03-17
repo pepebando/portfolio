@@ -12,14 +12,14 @@
         
         <!-- Sección de Artistas -->
         <section class="w-full p-6">
-            <h2 class="text-2xl font-bold">Technical Skills</h2>
-            <div class="grid grid-cols-3 place-items-center lg:grid-cols-6 overflow-x-auto space-x-1 mt-4 ">
+            <h2 class="text-center text-4xl lg:text-left lg:text-2xl font-bold mb-10">Technical Skills</h2>
+            <div class="grid grid-cols-3 place-items-center lg:grid-cols-7 overflow-y-none overflow-x-none  ">
                 <PerfilCardUI v-for="(project, index) in Habilidades" :key="index" :title="project.title" :image="project.image" />
             </div>
         </section>
         
         <section class="p-6">
-            <h2 class="text-2xl font-bold">Certficates and Education</h2>
+            <h2 class="text-4xl lg:text-2xl font-bold">Certficates and Education</h2>
             <div class="mt-4">
                 <SocialMediaPercilUI v-for="(social, index) in socialmedia" :key="index" :number="index + 1" :title="social.title" :description="social.description" :duration="social.duration" :image="social.image" />
             </div>
