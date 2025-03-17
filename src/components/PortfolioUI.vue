@@ -11,6 +11,8 @@
       <ProjectCard v-for="(project, index) in projectarray" :key="index" :title="project.title" :image="project.image" :description="project.description" :color="project.color"/>
     </div>
   </div>
+  <div class="h-25 block lg:hidden">
+  </div>
   </template>
 
 <script setup lang="ts">
