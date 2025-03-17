@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen w-screen bg-black text-white overflow-y-none  scrollbar-none">
+  <div class="flex h-screen w-screen bg-black text-white overflow-y-none  scrollbar-none pointer-events-none">
     <main class="w-full overflow-y-none  scrollbar-none" >
       <div class="w-full flex h-80/100 lg:h-90/100">
         
