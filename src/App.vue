@@ -1,4 +1,5 @@
 <template>
+  
   <div class="flex h-screen w-screen bg-black text-white overflow-y-none h-80/100 lg:h-90/100 ">
     <main class="w-full overflow-y-none  scrollbar-none" >
       <div class="w-full flex  lg:h-90/100">
@@ -21,7 +22,7 @@
           <div class="mt-7">
             <h2 class="text-lg font-semibold">Categories</h2>
             <ul class="mt-1 space-y-1">
-              <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+              <SidebarCard router-link  v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
             </ul>
           </div>
         </div>
@@ -72,6 +73,7 @@
       <Transition name="fade" mode="out-in">
         <component :is="currentComponent" :key="PerfilActual" />
       </Transition>
+
     </div>
     
     <!-- Barra de Reproducción -->
@@ -82,7 +84,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, provide} from 'vue';
+import { ref, computed} from 'vue';
 
 import SideBarResponsive from '/src/components/SideBarResponsive.vue';
 import SidebarCard from '/src/components/SidebarCard.vue';
@@ -118,11 +120,7 @@ const currentComponent = computed(() => {
   }
 });
 
-const changePage = (newPage) => {
-  PerfilActual.value= newPage;
-  console.log(`Page changed to: ${newPage}`);
-};
-provide("changePage",changePage)
+
 </script>
 
 <style>
