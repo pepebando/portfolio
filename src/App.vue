@@ -1,7 +1,7 @@
 <template>
-  <div class="flex h-screen w-screen bg-black text-white overflow-y-hidden">
+  <div class="flex h-screen w-screen bg-black text-white overflow-y-none">
     <main class="w-full overflow-y-none" >
-      <div class="w-full flex h-100/100 lg:h-90/100">
+      <div class="w-full flex h-80/100 lg:h-90/100">
         
         <!-- Sidebar Desktop (Solo en Desktop) -->
         <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden lg:block" >
