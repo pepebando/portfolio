@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col items-center">
-      <img :src="image" class="w-25 h-25 rounded-full object-cover" alt="Artist Image" />
-      <p class="mt-2 text-sm">{{ title }}</p>
+    <div class="mb-10 ">
+      <img :src="image" class="w-25 h-25 rounded-full object-cover mb-5" alt="Artist Image" />
+      <p class="w-25 mt-2 text-sm text-center" >{{ title }}</p>
     </div>
   </template>
   

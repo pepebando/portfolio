@@ -2,7 +2,7 @@
     <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-gray-700 to-black rounded-lg scrollbar overflow-y-scroll">
         <!-- Encabezado con Fondo Degradado -->
         <div class="relative flex items-center p-6">
-            <img class="w-50 h-50 rounded-full border-4 border-gray-900 " src="/src/assets/Profile.jpg" alt="Profile Picture" />
+            <img class=" w-50 h-50 rounded-full border-4 border-gray-900 " src="/src/assets/Profile.jpg" alt="Profile Picture" />
             <div class="ml-6">
                 <p class="text-sm text-gray-300">Profile</p>
                 <h1 class="text-5xl font-bold">José Obando</h1>
@@ -13,7 +13,7 @@
         <!-- Sección de Artistas -->
         <section class="w-full p-6">
             <h2 class="text-2xl font-bold">Technical Skills</h2>
-            <div class="flex overflow-x-auto space-x-6 mt-4">
+            <div class="grid grid-cols-3  lg:grid-cols-6 overflow-x-auto space-x-1 mt-4 ">
                 <PerfilCardUI v-for="(project, index) in Habilidades" :key="index" :title="project.title" :image="project.image" />
             </div>
         </section>
