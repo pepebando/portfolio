@@ -43,7 +43,7 @@
               <XIcon class="w-12 h-12" />
             </button>  
             <nav class="space-y-4">
-              <ul>
+              <ul class="mt-1 space-y-1">
                 <li class="p-5">
                   <div @click="PerfilActual = 'Home'" class="flex justify-center items-center gap-x-4 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
                     <HomeIcon class="w-12 h-12" />
@@ -62,7 +62,7 @@
                     <span>Contact</span>
                   </div>
                 </li>
-                
+                <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
               </ul>
             </nav>
           </div>
