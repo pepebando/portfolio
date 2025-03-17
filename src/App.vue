@@ -3,7 +3,54 @@
     <main class="w-full">
       
       <div class="w-full flex h-90/100">
-        <SidebarResponsive />
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block" " >
+          <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
+            <HomeIcon class="w-6 h-6" />
+            <span>Home</span>
+          </div>
+          <div @click="PerfilActual = 'Projects'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
+            <LibraryIcon class="w-6 h-6" />
+            <span>All my projects</span>
+          </div>
+          <div @click="PerfilActual = 'Contact'" class="flex items-center space-x-2 cursor-pointer transition-opacity">
+            <MailIcon class="w-6 h-6" />
+            <span>Contact</span>
+          </div>
+          <div class="mt-7">
+            <h2 class="text-lg font-semibold">Categories</h2>
+            <ul class="mt-1 space-y-1">
+              <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+            </ul>
+          </div>
+        </div>
+        <div class="relative block md:hidden">
+          <!-- Botón de Menú -->
+          <button @click="menuOpen = !menuOpen" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md">
+            <MenuIcon class="w-6 h-6" />
+          </button>
+          
+          <!-- Menú Desplegable -->
+          <Transition name="slide">
+            <div v-if="menuOpen" class="fixed inset-y-0 left-0 w-72 bg-black text-white p-6 shadow-lg z-40">
+              
+              <!-- Perfil -->
+              <div class="flex items-center space-x-3 mb-6">
+                <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full" />
+                <div>
+                  <h2 class="text-lg font-bold">Pepe Obando</h2>
+                  <p class="text-gray-400 text-sm">Ver perfil</p>
+                </div>
+              </div>
+              
+              <!-- Opciones del Menú -->
+              <nav class="space-y-4">
+                <ul>
+                  <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+                </ul>
+              </nav>
+            </div>
+          </Transition>
+        </div>
         <!-- Transición entre Secciones -->
         <Transition name="fade" mode="out-in">
           <component :is="currentComponent" :key="PerfilActual" />
@@ -22,7 +69,6 @@
 import { ref, computed } from 'vue';
 
 
-import SidebarResponsive from '/src/components/SidebarResponsive.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
 import PlayBar from '/src/components/PlayBar.vue';
@@ -66,5 +112,17 @@ const currentComponent = computed(() => {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+/* Transición deslizante */
+.slide-enter-active, .slide-leave-active {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.slide-enter-from {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.slide-leave-to {
+    transform: translateX(-100%);
+    opacity: 0;
 }
 </style>
