@@ -15,7 +15,7 @@
         <div class="mt-7">
             <h2 class="text-lg font-semibold">Categories</h2>
             <ul class="mt-1 space-y-1">
-                <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+
             </ul>
         </div>
     </div>
