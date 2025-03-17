@@ -58,8 +58,6 @@ const sidebararray = ref([
 body{
   font-family: 'Inter', sans-serif;
   
-  overflow: auto !important;
-  height: auto !important;
 }
 
 /* Transición de Fade Mejorada */

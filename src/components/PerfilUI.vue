@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-gray-700 to-black rounded-lg scrollbar overflow-y-scroll">
+    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-gray-700 to-black rounded-lg crollbar overflow-y-scroll h-screen ">
         <!-- Encabezado con Fondo Degradado -->
         <div class="relative flex items-center p-6">
             <img class=" w-50 h-50 rounded-full border-4 border-gray-900 " src="/src/assets/Profile.jpg" alt="Profile Picture" />
