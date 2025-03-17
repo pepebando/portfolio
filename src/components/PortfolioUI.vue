@@ -41,7 +41,7 @@ const projectarray = ref([
 ]);
 
 const favoritesrray = ref([
-{ title: 'Mix Diario 1',image:"https://placehold.in/200x200@2x.png/dark" },
+{ title: 'Mix Diario 1',image:"https://placehold.in/1920x1080@2x.png/dark" },
 { title: 'Mix Diario 2',image:"https://placehold.in/300x200@2x.png/dark" },
 { title: 'Mix Diario 3',image:"https://placehold.in/300x200@2x.png/dark" },
 { title: 'Mix Diario 4',image:"https://placehold.in/300x200@2x.png/dark" },
