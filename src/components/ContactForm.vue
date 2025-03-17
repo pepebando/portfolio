@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bggreengradient via-black to-black rounded-lg scrollbar overflow-y-scroll h-screen flex justify-center items-center">
+    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bggreengradient via-black to-black rounded-lg scrollbar overflow-y-scroll h-screen flex justify-center lg:items-center">
         <!-- Encabezado con Fondo Degradado -->    
-        <div class="max-w-10/10  w-9/10 lg:max-w-6/10  p-6  text-white rounded-lg  ">
-            <h1 class="text-5xl font-bold text-center mb-2">Ready to work with you</h1>
-            <p class="text-sm text-gray-400 mt-2 mb-4">Send me a message, and i will respond you as soon as possible</p>
+        <div class="mt-40 lg:mt-0 max-w-10/10  w-9/10 lg:max-w-6/10  p-6  text-white rounded-lg  ">
+            <h1 class="text-7xl lg:text-5xl font-bold text-center mb-2">Ready to work with you</h1>
+            <p class="mt-15 lg:mt-0 text-2xl lg:text-sm text-gray-400 mt-2 mb-4">Send me a message, and i will respond you as soon as possible</p>
             <!-- Formulario -->
             <form @submit.prevent="sendEmail" class="space-y-4">
                 <!-- Nombre -->
@@ -14,19 +14,19 @@
                     type="text"
                     id="name"
                     placeholder="Your name"
-                    class="w-full p-2 mt-1 bg-black border border-GreenBtn rounded"
+                    class="text-3xl lg:text-xl w-full p-2 mt-1 bg-black border border-GreenBtn rounded"
                     required
                     />
                 </div>
                 <!-- Correo -->
-                <div>
+                <div >
                     
                     <input
                     v-model="form.email"
                     type="email"
                     id="email"
                     placeholder="Your email"
-                    class="w-full p-2 mt-1 bg-black border border-GreenBtn  rounded"
+                    class="text-3xl lg:text-xl w-full p-2 mt-1 bg-black border border-GreenBtn  rounded"
                     required
                     />
                 </div>
@@ -38,14 +38,14 @@
                     id="message"
                     rows="4"
                     placeholder="Write here your message..."
-                    class="w-full p-2 mt-1 bg-black border border-GreenBtn rounded"
+                    class="text-3xl lg:text-xl w-full p-2 mt-1 bg-black border border-GreenBtn rounded"
                     required
                     ></textarea>
                 </div>
                 <!-- Botón de Enviar -->
                 <button
                 type="submit"
-                class="w-full bg-GreenBtn cursor-pointer  text-black font-bold py-2 px-4 rounded transition  hover:bg-GreenBtnHover">
+                class="text-3xl lg:text-xl w-full bg-GreenBtn cursor-pointer  text-black font-bold py-2 px-4 rounded transition  hover:bg-GreenBtnHover">
                 Send message
             </button>
         </form>
