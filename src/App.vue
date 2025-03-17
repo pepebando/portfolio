@@ -62,7 +62,7 @@
                     <span>Contact</span>
                   </div>
                 </li>
-                <SidebarCard v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+                <SideBarResponsive v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
               </ul>
             </nav>
           </div>
@@ -85,7 +85,8 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import SidebarResponsive from '/src/components/SidebarResponsive.vue';
+
+import SideBarResponsive from '/src/components/SideBarResponsive.vue';
 import SidebarCard from '/src/components/SidebarCard.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
