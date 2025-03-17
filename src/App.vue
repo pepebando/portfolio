@@ -2,9 +2,8 @@
   <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
     <main class="w-full">
       <div class="w-full flex lg:h-90/100">
-        
         <!-- Sidebar Desktop -->
-        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden lg:block">
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll ">
           <router-link to="/" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
             <span>Home</span>
@@ -17,7 +16,7 @@
             <MailIcon class="w-6 h-6" />
             <span>Contact</span>
           </router-link>
-
+          
           <div class="mt-7">
             <h2 class="text-lg font-semibold">Categories</h2>
             <ul class="mt-1 space-y-1">
@@ -27,12 +26,10 @@
             </ul>
           </div>
         </div>
-
         <!-- Contenido Principal: Aquí se muestra la página según la ruta -->
-        <div class="flex-1 p-6">
+        <div class="flex-1 p-6 overflow-y-scroll scrollbar">
           <router-view />
         </div>
-
       </div>
     </main>
   </div>
@@ -40,10 +37,7 @@
 
 <script setup lang="ts">
 import { ref, computed} from 'vue';
-
-
 import SidebarCard from '/src/components/SidebarCard.vue';
-
 
 const sidebararray = ref([
 { title: 'Unreal Engine', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
@@ -63,7 +57,7 @@ const sidebararray = ref([
 <style>
 body{
   font-family: 'Inter', sans-serif;
- 
+  
   overflow: auto !important;
   height: auto !important;
 }
