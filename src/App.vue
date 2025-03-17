@@ -1,97 +1,48 @@
 <template>
-  
-  <div class="flex h-screen w-screen bg-black text-white overflow-y-none h-80/100 lg:h-90/100 ">
-    <main class="w-full overflow-y-none  scrollbar-none" >
-      <div class="w-full flex  lg:h-90/100">
+  <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
+    <main class="w-full">
+      <div class="w-full flex lg:h-90/100">
         
-        <!-- Sidebar Desktop (Solo en Desktop) -->
-        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden lg:block" >
-          <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
+        <!-- Sidebar Desktop -->
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden lg:block">
+          <router-link to="/" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
             <span>Home</span>
-          </div>
-          <div @click="PerfilActual = 'Projects'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
+          </router-link>
+          <router-link to="/projects" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <LibraryIcon class="w-6 h-6" />
             <span>All my projects</span>
-          </div>
-          <div @click="PerfilActual = 'Contact'" class="flex items-center space-x-2 cursor-pointer transition-opacity">
+          </router-link>
+          <router-link to="/contact" class="flex items-center space-x-2 cursor-pointer transition-opacity">
             <MailIcon class="w-6 h-6" />
             <span>Contact</span>
-          </div>
-          
+          </router-link>
+
           <div class="mt-7">
             <h2 class="text-lg font-semibold">Categories</h2>
             <ul class="mt-1 space-y-1">
-              <SidebarCard router-link  v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
+              <router-link v-for="(project, index) in sidebararray" :key="index" :to="`/projects`">
+                <SidebarCard :title="project.title" :image="project.image" />
+              </router-link>
             </ul>
           </div>
         </div>
-        
-        <!-- Botón de Menú Móvil (Solo en móvil) -->
-        <button @click="menuOpen = true" class="fixed top-4 right-5 z-50 p-2 bg-gray-800 text-white rounded-md block lg:hidden">
-          <MenuIcon class="w-20 h-20" />
-        </button>
-        
-        <!-- Menú Responsive en Móvil -->
-        <Transition name="slide">
-          <div v-if="menuOpen" class="fixed inset-0  bg-black bg-opacity-50 backdrop-blur-md z-50 flex"
-          @click="menuOpen = false"
-          @touchstart="menuOpen = false">
-          
-          <!-- Contenedor del Menú -->
-          
-          <div class="w-full bg-black text-white p-6 shadow-lg z-50 relative p-15" @click.stop>
-            <button @click="menuOpen = false" class="absolute top-4 left-4 text-white w-12 h-12 z-999">
-              <XIcon class="w-20 h-20" />
-            </button>  
-            <h1 class="text-5xl text-center p-10">Menu</h1>
-            <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
-              <div @touchstart="PerfilActual = 'Home'" class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
-                <HomeIcon class="w-25 h-25" />
-                <h1 class="text-xl text-center ">Home</h1>
-              </div>
-              <div @touchstart="PerfilActual = 'Projects'" class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
-                <LibraryIcon class="w-25 h-25" />
-                <h1 class="text-xl text-center "> All my projects</h1>
-              </div>
-              <div @touchstart="PerfilActual = 'Contact'" class="flex flex-col items-center justify-center items-center w-50 h-50 rounded-xl pt-3 pb-3 pl-1 border-1 bg-black hover:bg-greyspotclear">
-                <MailIcon class="w-25 h-25" />
-                <h1 class="text-xl text-center ">Contact</h1>
-              </div>
-            </div>  
-            <h1 class="text-5xl text-center p-10 mt-15">Categories</h1>
-            <div class="grid grid-cols-3 gap-15 mt-6 place-items-center  ">
-              <SideBarResponsive  v-for="(project, index) in sidebararray" :key="index" :title="project.title" :image="project.image" />
-            </div>
-            
-          </div>
-          
-        </div>
-      </Transition>
-      
-      <!-- Transición entre Secciones -->
-      <Transition name="fade" mode="out-in">
-        <component :is="currentComponent" :key="PerfilActual" />
-      </Transition>
 
-    </div>
-    
-    <!-- Barra de Reproducción -->
-    
-    
-  </main>
-</div>
+        <!-- Contenido Principal: Aquí se muestra la página según la ruta -->
+        <div class="flex-1 p-6">
+          <router-view />
+        </div>
+
+      </div>
+    </main>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed} from 'vue';
 
-import SideBarResponsive from '/src/components/SideBarResponsive.vue';
+
 import SidebarCard from '/src/components/SidebarCard.vue';
-import PortfolioUI from '/src/components/PortfolioUI.vue';
-import PerfilUI from '/src/components/PerfilUI.vue';
-import ContactForm from '/src/components/ContactForm.vue';
-import IndividualProject from '/src/components/IndividualProject.vue';
 
 
 const sidebararray = ref([
@@ -105,20 +56,6 @@ const sidebararray = ref([
 { title: 'APPs', image: "https://img.icons8.com/color/48/apple-app-store--v3.png" },
 { title: 'Others', image: "https://cdn.brandfetch.io/id93sjCX4f/w/300/h/300/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" }
 ]);
-
-const PerfilActual = ref("Home");
-const menuOpen = ref(false);
-
-// Computed property para cambiar dinámicamente el componente
-const currentComponent = computed(() => {
-  switch (PerfilActual.value) {
-    case "Projects": return PortfolioUI;
-    case "Contact": return ContactForm;
-    case "Home": return PerfilUI;
-    case "IndividualProject": return IndividualProject;
-    default: return PerfilUI;
-  }
-});
 
 
 </script>

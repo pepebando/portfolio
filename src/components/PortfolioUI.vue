@@ -8,7 +8,7 @@
     </div> 
     <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects</h1>
     <div class="grid grid-cols-3  lg:grid-cols-6 gap-4 mt-4">
-      <router-link v-for="IndividualProject in IndividualProjects" :key="IndividualProject.id" :to="`/IndividualProject/${IndividualProject.id}`" >
+      <router-link v-for="IndividualProject in IndividualProjects" :key="IndividualProject.id" :to="`/project/${IndividualProject.id}`">
         <ProjectCard :title="IndividualProject.title" :image="IndividualProject.image" :description="IndividualProject.description" :color="IndividualProject.color"/>
       </router-link>
     </div>
@@ -26,7 +26,7 @@ const IndividualProjects = ref([]);
 
 onMounted(async () => {
   try {
-    const response = await fetch('src/assets/data.json'); // Fetch data.json
+    const response = await fetch('dataProjectCard.json'); // Fetch data.json
     IndividualProjects.value = await response.json();
     console.log('Exito al tomar los datos');
   } catch (error) {

@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '/portfolio/src/App.vue';
-import IndividualProjectPage from '/portfolio/src/components/IndividualProject.vue';
+import Home from '/src/App.vue';
+import IndividualProject from '/src/components/IndividualProject.vue';
+import PerfilUI from '/src/components/PerfilUI.vue';
+import PortfolioUI from '/src/components/PortfolioUI.vue';
+import ContactForm from '/src/components/ContactForm.vue';
+ // Asegúrate de que el archivo existe
 
 const routes = [
-  { path: '/portfolio/', component: HomePage },
-  { path: '/IndividualProject/:id', component: IndividualProjectPage, props: true }
+  { path: '/', component: PerfilUI },
+  { path: '/projects', component: PortfolioUI },
+  { path: '/contact', component: ContactForm },
+  { path: '/project/:id', component: IndividualProject, props: true } // Dynamic Route for Projects
 ];
+
 
 const router = createRouter({
   history: createWebHistory(),
