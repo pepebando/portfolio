@@ -119,6 +119,10 @@ const currentComponent = computed(() => {
 </script>
 
 <style>
+body{
+  font-family: 'Inter', sans-serif;
+  -ms-overflow-style: none;
+}
 /* Transición de Fade Mejorada */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.4s ease, transform 0.4s ease;
