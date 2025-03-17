@@ -4,9 +4,9 @@
         <div class="relative flex items-center p-6">
             <img class=" w-50 h-50 rounded-full border-4 border-gray-900 " src="/src/assets/Profile.jpg" alt="Profile Picture" />
             <div class="ml-6">
-                <p class="text-sm text-gray-300">Profile</p>
-                <h1 class="text-5xl font-bold">José Obando</h1>
-                <p class="text-sm text-gray-400 mt-2">+30 Projects Created • +5 Programming Languages • Bilingual(English/Spanish)</p>
+                <p class="text-2xl lg:text-sm text-gray-300">Profile</p>
+                <h1 class="text-5xl lg:text-5xl font-bold">José Obando</h1>
+                <p class="text-2xl lg:text-sm text-gray-400 mt-2">+30 Projects Created • +5 Programming Languages • Bilingual(English/Spanish)</p>
             </div>
         </div>
         
