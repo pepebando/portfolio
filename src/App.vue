@@ -4,7 +4,7 @@
       
       <div class="w-full flex h-90/100">
         <SidebarUI class="md:block hidden"/>
-        <SidebarResponsive class="block md:hidden" />
+
         <!-- Transición entre Secciones -->
         <Transition name="fade" mode="out-in">
           <component :is="currentComponent" :key="PerfilActual" />
