@@ -4,7 +4,7 @@
       <div class="w-full flex h-90/100">
 
         <!-- Sidebar Desktop (Solo en Desktop) -->
-        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden md:block">
+        <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg scrollbar overflow-y-scroll hidden lg:block" >
           <div @click="PerfilActual = 'Home'" class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity">
             <HomeIcon class="w-6 h-6" />
             <span>Home</span>
@@ -26,7 +26,7 @@
         </div>
 
         <!-- Botón de Menú Móvil (Solo en móvil) -->
-        <button @click="menuOpen = true" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md block md:hidden">
+        <button @click="menuOpen = true" class="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md block lg:hidden">
           <MenuIcon class="w-6 h-6" />
         </button>
 
