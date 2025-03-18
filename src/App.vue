@@ -46,30 +46,30 @@
 <div class="relative lg:hidden">
   <!-- Botón de menú -->
   
-  <button @click="isOpen = !isOpen" class="fixed top-4 left-4 z-50 p-2 bg-black text-white rounded-lg shadow-lg">
-    <MenuIcon class="w-8 h-8" />
+  <button @click="isOpen = !isOpen" class="fixed top-10 right-10 z-50 p-2 bg-black text-white rounded-lg shadow-lg">
+    <MenuIcon class="w-20 h-20" />
   </button>
   <transition name="slide-fade">
     <div v-if="isOpen" class="fixed inset-0 bg-black bg-opacity-80 z-40 flex flex-col p-6">
-      <h1 class="text-lg text-center m-10">Main menu</h1>
-      <button @click="isOpen = false" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
-      <masonry-wall :items="menuMobile" :ssr-columns="3" :column-width="250" :gap="10">
+      <h1 class="text-5xl text-center mt-25 m-10">Main menu</h1>
+      <button @click="isOpen = false" class="absolute top-10 left-10 text-white text-7xl">&times;</button>
+      <masonry-wall :items="menuMobile" :ssr-columns="4" :column-width='550' :min-columns="3" :gap="10" >
         <template v-slot="{ item }">
           <router-link @click="isOpen = false" :to="item.link" class="block p-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">
             <div class="flex items-center space-x-3">
-              <img :src="item.image" alt="icon" class="w-10 h-10 object-contain" />
-              <span class="text-lg">{{ item.title }}</span>
+              <img :src="item.image" alt="icon" class="w-20 h-20 object-contain" />
+              <span class="text-3xl">{{ item.title }}</span>
             </div>
           </router-link>
         </template>
       </masonry-wall>
-      <h1 class="text-lg text-center m-10">Categories</h1>
-      <masonry-wall :items="categories" :ssr-columns="3" :column-width="250" :gap="10">
+      <h1 class="text-5xl text-center mt-25 m-10">Categories</h1>
+      <masonry-wall :items="categories" :min-columns="2"  :gap="10">
         <template v-slot="{ item }">
           <router-link @click="isOpen = false" :key=item.index :to="{path: '/projects',query:{category: item.tags}}" class="block p-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">
             <div class="flex items-center space-x-3">
-              <img :src="item.image" alt="icon" class="w-10 h-10 object-contain" />
-              <span class="text-lg">{{ item.title }}</span>
+              <img :src="item.image" alt="icon" class="w-20 h-20 object-contain" />
+              <span class="text-3xl">{{ item.title }}</span>
             </div>
           </router-link>
         </template>
@@ -95,9 +95,9 @@ import MasonryWall from "@yeger/vue-masonry-wall";
 import { Menu as MenuIcon , MailIcon,LibraryIcon,HomeIcon} from "lucide-vue-next";
 const isOpen = ref(false);
 const menuMobile = ref([
-{ title: "Home", link: "/", image: "https://img.icons8.com/ios-filled/50/color/home.png" },
-{ title: "Projects", link: "/projects", image: "https://img.icons8.com/ios-filled/50/project.png" },
-{ title: "Contact", link: "/contact", image: "https://img.icons8.com/ios-filled/50/email.png" },
+{ title: "Home", link: "/", image: "https://img.icons8.com/ffffff/ios-filled/50/home.png" },
+{ title: "Projects", link: "/projects", image: "https://img.icons8.com/ffffff/ios-filled/50/project.png" },
+{ title: "Contact", link: "/contact", image: "https://img.icons8.com/ffffff/ios-filled/50/email.png" },
 ]);
 const categories = ref([
 { title: 'Unreal Engine',tags:'ue', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
