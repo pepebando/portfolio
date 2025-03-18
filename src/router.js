@@ -4,17 +4,14 @@ import IndividualProject from '/src/components/IndividualProject.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
 import PortfolioUI from '/src/components/PortfolioUI.vue';
 import ContactForm from '/src/components/ContactForm.vue';
- // Asegúrate de que el archivo existe
+// Asegúrate de que el archivo existe
 
 const routes = [
   { path: '/', component: PerfilUI },
   { path: '/projects', component: PortfolioUI },
   { path: '/contact', component: ContactForm },
   { path: '/project/:id', component: IndividualProject, props: true } ,
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/' // 🔄 Redirige cualquier ruta inválida a "/"
-  }
+  { path: '/:pathMatch(.*)*', component: Home },
 ];
 
 
