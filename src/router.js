@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
+
 import Home from '/src/App.vue';
 import IndividualProject from '/src/components/IndividualProject.vue';
 import PerfilUI from '/src/components/PerfilUI.vue';
@@ -16,7 +17,7 @@ const routes = [
 
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
