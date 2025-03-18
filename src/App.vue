@@ -122,7 +122,9 @@ const categories = ref([
 body {
   font-family: 'Inter', sans-serif;
 }
-
+html{
+  background-color: black;
+}
 /* Transición de Fade */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.4s ease-in-out;
