@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bgtopgradient to-black rounded-lg scrollbar overflow-y-scroll h-screen">
+  <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bgtopgradient to-black rounded-lg ">
     
     <!-- Título de Destacados -->
     <div class="flex justify-between mt-15 lg:mt-0">

@@ -1,5 +1,5 @@
 <template>
-  <div  @mouseover="show = true" @mouseleave="show = false" class="relative group p-5 cursor-pointer rounded-lg overflow-hidden hover:bg-greyspotclear p-2">
+  <div  @mouseover="show = true" @mouseleave="show = false" class="relative group p-5 cursor-pointer rounded-lg  hover:bg-greyspotclear p-2">
     <!-- Imagen -->
     <img :src="image" alt="Cover"   class="w-full h-40 object-cover rounded-lg " />
     

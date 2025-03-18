@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-gray-700 to-black rounded-lg scrollbar overflow-y-scroll h-screen ">
+    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-gray-700 to-black rounded-lg  ">
         <!-- Encabezado con Fondo Degradado -->
         <div class="relative flex items-center p-6">
             <img class=" w-50 h-50 rounded-full border-4 border-gray-900 " src="/src/assets/Profile.jpg" alt="Profile Picture" />
@@ -30,7 +30,7 @@
             <!-- Sección de Artistas -->
             <section class="w-full p-6">
                 <h2 class="text-center text-4xl lg:text-left lg:text-2xl font-bold mb-10">Technical Skills</h2>
-                <div class="grid grid-cols-3 place-items-center lg:grid-cols-7 overflow-y-none overflow-x-none  ">
+                <div class="grid grid-cols-3 place-items-center lg:grid-cols-7   ">
                     <PerfilCardUI v-for="(project, index) in Habilidades" :key="index" :title="project.title" :image="project.image" />
                 </div>
             </section>

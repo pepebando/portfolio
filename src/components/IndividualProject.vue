@@ -3,7 +3,7 @@
     <!-- Sección de portada -->
     <div class="relative bg-gradient-to-b from-purple-800 to-black p-6 rounded-lg   ">
       <div class="flex items-center">
-        <img :src="project.image" class="rounded-lg w-48 h-48 object-cover shadow-lg scrollbar overflow-y-scroll" />
+        <img :src="project.image" class="rounded-lg w-48 h-48 object-cover shadow-lg " />
         <div class="ml-6">
           <p class="text-sm text-gray-300">{{route.query.subtitle}}</p>
           <h1 class="text-4xl font-bold w-9/10 lg:w-7/10">{{route.query.title}}</h1>

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bggreengradient via-black to-black rounded-lg scrollbar overflow-y-scroll h-screen flex justify-center lg:items-center">
+    <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bggreengradient via-black to-black rounded-lg  flex justify-center lg:items-center">
         <!-- Encabezado con Fondo Degradado -->    
         <div class="mt-40 lg:mt-0 max-w-10/10  w-9/10 lg:max-w-6/10 lg:w-4/10  p-6  text-white rounded-lg  ">
             <h1 class="text-7xl lg:text-5xl font-bold text-center mb-2">Ready to work with you</h1>

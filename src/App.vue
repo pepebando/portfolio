@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen w-screen bg-black text-white overflow-hidden">
+  <div class="flex h-screen w-screen bg-black text-white ">
     <main class="w-full">
       <div class="w-full flex lg:h-90/100">
         <!-- Sidebar Desktop -->
@@ -78,7 +78,7 @@
   </transition>
 </div>
 <!-- Contenido Principal con animación -->
-<div class="flex-1 p-6 overflow-y-scroll scrollbar">
+<div class="flex-1 p-6 ">
   <Transition name="fade">
     <router-view />
   </Transition>
