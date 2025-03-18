@@ -10,7 +10,11 @@ const routes = [
   { path: '/', component: PerfilUI },
   { path: '/projects', component: PortfolioUI },
   { path: '/contact', component: ContactForm },
-  { path: '/project/:id', component: IndividualProject, props: true } // Dynamic Route for Projects
+  { path: '/project/:id', component: IndividualProject, props: true } ,
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/' // 🔄 Redirige cualquier ruta inválida a "/"
+  }
 ];
 
 
