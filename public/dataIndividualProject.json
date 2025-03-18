@@ -5,7 +5,17 @@
         "subtitle": "Advanced Vue Components",
         "image": "https://placehold.in/1920x1080@2x.png/dark",
         "description": "Este proyecto trata de 1",
-        "color":"bg-titlep1"
+        "ImagenesIndividualProjectArray": [
+            { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" }
+          ]
     },
     {
         "id": 2,
@@ -13,7 +23,18 @@
         "subtitle": "Advanced Vue Components",
         "image": "https://placehold.in/1920x1080@2x.png/dark",
         "description": "Este proyecto trata de 2",
-        "color":"bg-titlep2"
+        "ImagenesIndividualProjectArray": [
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1921x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
+            { "src": "https://placehold.in/1922x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" }
+          ]
+
     },
     {
         "id": 3,
@@ -21,6 +42,16 @@
         "subtitle": "Advanced Vue Components",
         "image": "https://placehold.in/1920x1080@2x.png/dark",
         "description": "Este proyecto trata de 3",
-        "color":"bg-titlep3"
+        "ImagenesIndividualProjectArray": [
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
+            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" }
+          ]
     }
 ]
