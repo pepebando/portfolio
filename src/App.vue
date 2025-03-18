@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen w-screen bg-black text-white ">
     <main class="w-full">
-      <div class="w-full flex lg:h-90/100">
+      <div class="w-full flex ">
         <!-- Sidebar Desktop -->
         <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg hidden lg:block">
           <router-link 
@@ -78,7 +78,7 @@
   </transition>
 </div>
 <!-- Contenido Principal con animación -->
-<div >
+<div class="flex-1">
   <Transition name="fade">
     <router-view />
   </Transition>
@@ -92,10 +92,8 @@
 import { ref } from 'vue';
 import SidebarCard from '/src/components/SidebarCard.vue';
 import MasonryWall from "@yeger/vue-masonry-wall";
+import { HomeIcon,LibraryIcon,MailIcon,MenuIcon } from "lucide-vue-next";
 
-
-
-import { Menu as MenuIcon , MailIcon,LibraryIcon,HomeIcon} from "lucide-vue-next";
 const isOpen = ref(false);
 const menuMobile = ref([
 { title: "Home", link: "/", image: "https://img.icons8.com/ffffff/ios-filled/50/home.png" },

@@ -22,7 +22,7 @@
                 Feel free to reach out—I’m always open to new projects and collaborations!</p>
                 <router-link to="/contact" class="flex items-center space-x-2 cursor-pointer transition-opacity">
                     <button
-                class=" m-8 mt-1 text-3xl lg:text-xl bg-gray-700 text-white cursor-pointer  text-black font-bold py-2 px-4 rounded transition  hover:bg-GreenBtnHover">
+                class=" m-8 mt-1 text-3xl lg:text-xl bg-gray-700 text-white cursor-pointer  text-black font-bold py-2 px-4 rounded transition  hover:bg-gray-600">
                 Contact
             </button>
                 </router-link>
