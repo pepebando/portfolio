@@ -19,12 +19,10 @@
 </div>
 </template>
 <script setup lang="ts">
-import { ref,inject } from 'vue';
-
+import { ref} from 'vue';
 const show = ref(false);
-
-
 import { PlayIcon } from 'lucide-vue-next';
+
 defineProps<{ title: string, image: string ,description: string, color:string}>();
 </script>
 

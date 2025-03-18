@@ -1,57 +1,85 @@
 [
     {
         "id": 1,
-        "title": "Project Standard 1",
-        "subtitle": "Advanced Vue Components",
-        "image": "https://placehold.in/1920x1080@2x.png/dark",
-        "description": "Este proyecto trata de 1",
-        "ImagenesIndividualProjectArray": [
-            { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" }
-          ]
-    },
-    {
-        "id": 2,
-        "title": "Project Standard 2",
-        "subtitle": "Advanced Vue Components",
-        "image": "https://placehold.in/1920x1080@2x.png/dark",
-        "description": "Este proyecto trata de 2",
-        "ImagenesIndividualProjectArray": [
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1921x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
-            { "src": "https://placehold.in/1922x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" }
-          ]
-
-    },
-    {
-        "id": 3,
-        "title": "Project Standard 3",
-        "subtitle": "Advanced Vue Components",
-        "image": "https://placehold.in/1920x1080@2x.png/dark",
-        "description": "Este proyecto trata de 3",
-        "ImagenesIndividualProjectArray": [
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Naturaleza" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Ciudad Nocturna" },
-            { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "Tecnología" }
-          ]
-    }
+        "image": "/imgs/archviztello/m12.png",
+        "description": [
+            "This project represents a fusion of modern architectural design and high-level visualization technology.",
+            "Project Standard 1 is a photorealistic representation of a luxury residential space, emphasizing the use of contemporary materials, dynamic ambient lighting, and seamless integration with the natural surroundings.",
+            "<br>",
+            "💡 Key Features:",
+            "✅ Detailed architectural modeling with realistic finishes.",
+            "✅ Advanced lighting for both day and night scenes.",
+            "✅ Accurate representation of textures and materials.",
+            "✅ Open spaces with seamless indoor-outdoor integration.",
+            "✅ Optimized for virtual tours and interactive presentations.",
+            "<br>",
+            "This project was developed using cutting-edge real-time visualization tools, enabling an immersive experience for clients and architects alike."
+        ],
+        "ImagenesIndividualProjectArray": [            
+        { "src": "/imgs/archviztello/v1.mp4","srcimg":"/imgs/archviztello/m12.png", "alt": "ImgPlaceholder", "type":"video"},
+        { "src": "/imgs/archviztello/m1.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m2.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m3.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m4.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m5.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m6.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m7.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m8.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m9.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m10.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m11.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m12.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m13.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m14.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m15.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m16.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m17.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m19.png", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/m18.png", "alt": "ImgPlaceholder","type":"imagen" }
+    ],
+    "Videos" : [
+        {"src": "https://placehold.in/200x180@2x.png/dark", "alt": "Naturaleza"}
+    ]
+},
+{
+    "id": 2,
+    "title": "Project Standard 2",
+    "subtitle": "Advanced Vue Components",
+    "image": "https://placehold.in/1920x1080@2x.png/dark",
+    "description": "Este proyecto trata de 2",
+    "ImagenesIndividualProjectArray": [
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "/imgs/archviztello/v1.mp4", "alt": "ImgPlaceholder", "type":"video"},
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder","type":"imagen" },
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder","type":"imagen" }
+    ],
+    "Videos" : [
+        {"src": "https://placehold.in/200x180@2x.png/dark", "alt": "Naturaleza"}
+    ]
+    
+},
+{
+    "id": 3,
+    "title": "Project Standard 3",
+    "subtitle": "Advanced Vue Components",
+    "image": "https://placehold.in/1920x1080@2x.png/dark",
+    "description": "Este proyecto trata de 3",
+    "ImagenesIndividualProjectArray": [
+        { "src": "https://placehold.in/200x180@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" },
+        { "src": "https://placehold.in/1920x1080@2x.png/dark", "alt": "ImgPlaceholder" }
+    ],
+    "Videos" : [
+        {"src": "https://placehold.in/200x180@2x.png/dark", "alt": "Naturaleza"}
+    ]
+}
 ]

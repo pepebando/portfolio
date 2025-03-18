@@ -30,7 +30,10 @@
     <router-link 
     v-for="IndividualProject in filteredProjects" 
     :key="IndividualProject.id" 
-    :to="`/project/${IndividualProject.id}`"
+    :to="{
+      path: `/project/${IndividualProject.id}`,
+      query: { title: IndividualProject.title, subtitle: IndividualProject.subtitle }
+    }"
     >
     <ProjectCard 
     :title="IndividualProject.title" 
@@ -59,7 +62,7 @@ const IndividualFavoritesProjects = ref([]);
 
 const filteredProjects = computed(() => {
   if (!selectedCategory.value) return IndividualProjects.value;
-
+  
   return IndividualProjects.value.filter(project => {
     if (!Array.isArray(project.tags)) {
       return false;
@@ -73,11 +76,11 @@ const filteredProjects = computed(() => {
 watchEffect(() => {
   let category = route.query.category;
   
-
+  
   if (Array.isArray(category)) {
     category = category[0];
   }
-
+  
   selectedCategory.value = category ? category.trim().toLowerCase() : null;
 });
 
@@ -86,32 +89,32 @@ onMounted(async () => {
   try {
     const response = await fetch('dataProjectCard.json'); 
     const responseFav = await fetch('dataFavoritesProject.json'); 
-
+    
     if (!response.ok || !responseFav.ok) throw new Error("Error al obtener los datos");
-
+    
     let projects = await response.json();
     
     // ✅ Convertir `tags` a un array real
     projects.forEach(project => {
       if (typeof project.tags === "string") {
-
+        
         try {
           project.tags = JSON.parse(project.tags);
         } catch (e) {
-
+          
           project.tags = project.tags
-            .replace(/\[|\]/g, "")  
-            .split(",") 
-            .map(tag => tag.trim().toLowerCase());
+          .replace(/\[|\]/g, "")  
+          .split(",") 
+          .map(tag => tag.trim().toLowerCase());
         }
       }
     });
-
+    
     IndividualProjects.value = projects;
     IndividualFavoritesProjects.value = await responseFav.json();
-
+    
   } catch (error) {
-    console.error("❌ Error al cargar los datos:", error);
+    console.error(" Error al cargar los datos:", error);
   }
 });
 </script>

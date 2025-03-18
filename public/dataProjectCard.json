@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "title": "Vue.js Guide",
-        "subtitle": "Advanced Vue Components",
-        "image": "https://placehold.in/1920x1080@2x.png/dark",
-        "description": "Este proyecto trata de 1",
+        "title": "Advanced Architectural Visualization",
+        "subtitle": "Archiz in Unreal Engine 5.5",
+        "image": "/imgs/archviztello/m12.png",
+        "description": "Archiz in Unreal Engine 5.5",
         "color":"bg-titlep1",
-        "tags":["tag1"]
+        "tags":["ue","archviz"]
     },
     {
         "id": 2,
