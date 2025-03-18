@@ -78,7 +78,7 @@
   </transition>
 </div>
 <!-- Contenido Principal con animación -->
-<div class="flex-1 p-6 ">
+<div >
   <Transition name="fade">
     <router-view />
   </Transition>
