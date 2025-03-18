@@ -7,7 +7,7 @@
     </div>
     
     <!-- Proyectos Favoritos -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
       <router-link 
       v-for="IndividualFavProject in IndividualFavoritesProjects" 
       :key="IndividualFavProject.id" 
@@ -58,7 +58,7 @@ const route = useRoute();
 const selectedCategory = ref<string | null>(null);
 const IndividualProjects = ref([]);
 const IndividualFavoritesProjects = ref([]);
-
+const IDsFavoritos = ["1", "2", "3"];
 
 const filteredProjects = computed(() => {
   if (!selectedCategory.value) return IndividualProjects.value;
@@ -88,9 +88,8 @@ watchEffect(() => {
 onMounted(async () => {
   try {
     const response = await fetch('dataProjectCard.json'); 
-    const responseFav = await fetch('dataFavoritesProject.json'); 
     
-    if (!response.ok || !responseFav.ok) throw new Error("Error al obtener los datos");
+    if (!response.ok) throw new Error("Error al obtener los datos");
     
     let projects = await response.json();
     
@@ -111,7 +110,8 @@ onMounted(async () => {
     });
     
     IndividualProjects.value = projects;
-    IndividualFavoritesProjects.value = await responseFav.json();
+    IndividualFavoritesProjects.value = projects.filter(project => IDsFavoritos.includes(String(project.id)));
+
     
   } catch (error) {
     console.error(" Error al cargar los datos:", error);
