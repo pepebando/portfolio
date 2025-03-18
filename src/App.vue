@@ -53,7 +53,7 @@
     <div v-if="isOpen" class="fixed inset-0 bg-black bg-opacity-80 z-40 flex flex-col p-6">
       <h1 class="text-5xl text-center mt-25 m-10">Main menu</h1>
       <button @click="isOpen = false" class="absolute top-10 left-10 text-white text-7xl">&times;</button>
-      <masonry-wall :items="menuMobile" :ssr-columns="4" :column-width='550' :min-columns="3" :gap="10" >
+      <masonry-wall :items="menuMobile" :column-width='650' :min-columns="3" :gap="10" >
         <template v-slot="{ item }">
           <router-link @click="isOpen = false" :to="item.link" class="block p-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">
             <div class="flex items-center space-x-3">
