@@ -1,47 +1,128 @@
 <template>
-  <div class=" w-full p-4 mb-2 px-6 bg-gradient-to-b from-bgtopgradient to-black rounded-lg crollbar overflow-y-scroll h-screen  ">
+  <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-bgtopgradient to-black rounded-lg scrollbar overflow-y-scroll h-screen">
+    
+    <!-- Título de Destacados -->
     <div class="flex justify-between mt-15 lg:mt-0">
       <h1 class="text-5xl lg:text-3xl font-bold">¡Highlights!</h1>  
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 ">
-      <ProjectFavoriteCard v-for="(project, index) in favoritesrray" :key="index" :title="project.title" :image="project.image" />
-    </div> 
-    <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects</h1>
-    <div class="grid grid-cols-3  lg:grid-cols-6 gap-4 mt-4">
-      <router-link v-for="IndividualProject in IndividualProjects" :key="IndividualProject.id" :to="`/project/${IndividualProject.id}`">
-        <ProjectCard :title="IndividualProject.title" :image="IndividualProject.image" :description="IndividualProject.description" :color="IndividualProject.color"/>
-      </router-link>
-    </div>
-    <div class="h-50 block lg:hidden"></div>
+    
+    <!-- Proyectos Favoritos -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+      <router-link 
+      v-for="IndividualFavProject in IndividualFavoritesProjects" 
+      :key="IndividualFavProject.id" 
+      :to="`/project/${IndividualFavProject.id}`"
+      >
+      <ProjectFavoriteCard 
+      :title="IndividualFavProject.title" 
+      :image="IndividualFavProject.image" 
+      :description="IndividualFavProject.description" 
+      :color="IndividualFavProject.color" 
+      />
+    </router-link>
   </div>
   
-</template>
+  <!-- Título de Proyectos -->
+  <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects</h1>
+  
+  <!-- Lista de Proyectos Filtrados -->
+  <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 mt-4">
+    <router-link 
+    v-for="IndividualProject in filteredProjects" 
+    :key="IndividualProject.id" 
+    :to="`/project/${IndividualProject.id}`"
+    >
+    <ProjectCard 
+    :title="IndividualProject.title" 
+    :image="IndividualProject.image" 
+    :description="IndividualProject.description" 
+    :color="IndividualProject.color" 
+    />
+  </router-link>
+</div>
 
+<div class="h-50 block lg:hidden"></div>
+
+</div>
+</template>
 <script setup lang="ts">
-import { ref ,onMounted} from 'vue';
+import { ref, onMounted, computed, watchEffect } from 'vue';
+import { useRoute } from "vue-router";
 import ProjectCard from '/src/components/ProjectCard.vue';
 import ProjectFavoriteCard from '/src/components/ProjectFavoriteCard.vue';
 
+const route = useRoute();
+const selectedCategory = ref<string | null>(null);
 const IndividualProjects = ref([]);
+const IndividualFavoritesProjects = ref([]);
+
+
+const filteredProjects = computed(() => {
+  if (!selectedCategory.value) return IndividualProjects.value;
+
+  return IndividualProjects.value.filter(project => {
+    if (!Array.isArray(project.tags)) {
+      return false;
+    }
+    const match = project.tags.some(tag => tag.trim().toLowerCase() === selectedCategory.value);
+    return match;
+  });
+});
+
+
+watchEffect(() => {
+  let category = route.query.category;
+  
+
+  if (Array.isArray(category)) {
+    category = category[0];
+  }
+
+  selectedCategory.value = category ? category.trim().toLowerCase() : null;
+});
+
 
 onMounted(async () => {
   try {
-    const response = await fetch('dataProjectCard.json'); // Fetch data.json
-    IndividualProjects.value = await response.json();
-    console.log('Exito al tomar los datos');
+    const response = await fetch('dataProjectCard.json'); 
+    const responseFav = await fetch('dataFavoritesProject.json'); 
+
+    if (!response.ok || !responseFav.ok) throw new Error("Error al obtener los datos");
+
+    let projects = await response.json();
+    
+    // ✅ Convertir `tags` a un array real
+    projects.forEach(project => {
+      if (typeof project.tags === "string") {
+
+        try {
+          project.tags = JSON.parse(project.tags);
+        } catch (e) {
+
+          project.tags = project.tags
+            .replace(/\[|\]/g, "")  
+            .split(",") 
+            .map(tag => tag.trim().toLowerCase());
+        }
+      }
+    });
+
+    IndividualProjects.value = projects;
+    IndividualFavoritesProjects.value = await responseFav.json();
+
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error("❌ Error al cargar los datos:", error);
   }
 });
-
-const favoritesrray = ref([
-{ title: 'Mix Diario 1',image:"https://placehold.in/1920x1080@2x.png/dark" },
-{ title: 'Mix Diario 2',image:"https://placehold.in/300x200@2x.png/dark" },
-{ title: 'Mix Diario 3',image:"https://placehold.in/300x200@2x.png/dark" },
-{ title: 'Mix Diario 4',image:"https://placehold.in/300x200@2x.png/dark" },
-{ title: 'Mix Diario 5',image:"https://placehold.in/300x200@2x.png/dark" },
-{ title: 'Mix Diario 1',image:"https://placehold.in/200x200@2x.png/dark" },
-{ title: 'Mix Diario 1',image:"https://placehold.in/200x200@2x.png/dark" },
-{ title: 'Mix Diario 2',image:"https://placehold.in/300x200@2x.png/dark" }
-]);
 </script>
+
+
+<style>
+/* Animación Fade */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+</style>

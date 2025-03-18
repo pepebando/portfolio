@@ -10,7 +10,7 @@
             </div>
         </div>
         <section>
-            <p class="text-2xl lg:text-sm text-gray-200 m-8 mt-1 w-8/10">
+            <p class="text-2xl lg:text-sm text-gray-200 m-8 mt-1 w-6/10">
                 Hey there! I'm a versatile software developer with a strong background in <b>full-stack development, game design, and database management.</b> Passionate about crafting efficient and scalable solutions, I specialize in web development, backend systems, and interactive experiences using modern programming technologies.
                 
                 With experience in <b>JavaScript, Python, C++, C#, PHP, and SQL,</b> I have built dynamic applications, optimized databases, and developed immersive projects in <b>Unreal Engine</b>. My expertise extends to server-side programming with <b>Node.js and MySQL </b>, ensuring seamless integration and performance across different platforms.
@@ -20,6 +20,12 @@
                 <br>
                 <br>
                 Feel free to reach out—I’m always open to new projects and collaborations!</p>
+                <router-link to="/contact" class="flex items-center space-x-2 cursor-pointer transition-opacity">
+                    <button
+                class=" m-8 mt-1 text-3xl lg:text-xl bg-gray-700 text-white cursor-pointer  text-black font-bold py-2 px-4 rounded transition  hover:bg-GreenBtnHover">
+                Contact
+            </button>
+                </router-link>
             </section>
             <!-- Sección de Artistas -->
             <section class="w-full p-6">

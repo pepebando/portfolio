@@ -5,7 +5,8 @@
         "subtitle": "Advanced Vue Components",
         "image": "https://placehold.in/1920x1080@2x.png/dark",
         "description": "Este proyecto trata de 1",
-        "color":"bg-titlep1"
+        "color":"bg-titlep1",
+        "tags":["tag1"]
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "subtitle": "Advanced Vue Components",
         "image": "https://placehold.in/1920x1080@2x.png/dark",
         "description": "Este proyecto trata de 2",
-        "color":"bg-titlep2"
+        "color":"bg-titlep2",
+        "tags":["tag1"]
     },
     {
         "id": 3,
@@ -21,6 +23,7 @@
         "subtitle": "Advanced Vue Components",
         "image": "https://placehold.in/1920x1080@2x.png/dark",
         "description": "Este proyecto trata de 3",
-        "color":"bg-titlep3"
+        "color":"bg-titlep3",
+        "tags":["tag1","tag4"]
     }
 ]

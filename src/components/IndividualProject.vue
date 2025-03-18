@@ -80,6 +80,7 @@ const project = ref(null);
 const lightboxActive = ref(false);
 const currentIndex = ref(0);
 
+
 // Computed para obtener imágenes de `ImagenesIndividualProjectArray`
 const images = computed(() => project.value?.ImagenesIndividualProjectArray || []);
 
@@ -88,7 +89,6 @@ const currentImage = computed(() => images.value[currentIndex.value] || null);
 
 // ✅ Corregido: `openLightbox(index)` ahora recibe el índice correctamente
 const openLightbox = (index) => {
-  console.log("🔍 Abriendo imagen en index:", index);
   currentIndex.value = index;
   lightboxActive.value = true;
 };
@@ -114,11 +114,9 @@ onMounted(async () => {
   try {
     const response = await fetch("/dataIndividualProject.json");
     if (!response.ok) throw new Error("No se pudo cargar el archivo JSON");
-
     const jsonData = await response.json();
     project.value = jsonData.find((p) => p.id == route.params.id);
 
-    console.log("Imágenes cargadas:", project.value?.ImagenesIndividualProjectArray);
   } catch (error) {
     console.error("Error al cargar el JSON:", error);
   }
