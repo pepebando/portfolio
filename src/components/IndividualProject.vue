@@ -79,21 +79,15 @@ const route = useRoute();
 const project = ref(null);
 const lightboxActive = ref(false);
 const currentIndex = ref(0);
-
-
-// Computed para obtener imágenes de `ImagenesIndividualProjectArray`
 const images = computed(() => project.value?.ImagenesIndividualProjectArray || []);
-
-// Imagen actual en el lightbox
 const currentImage = computed(() => images.value[currentIndex.value] || null);
 
-// ✅ Corregido: `openLightbox(index)` ahora recibe el índice correctamente
 const openLightbox = (index) => {
   currentIndex.value = index;
   lightboxActive.value = true;
 };
 
-// ✅ Corregido: Se verifica que hay imágenes antes de navegar
+
 const prevImage = () => {
   if (!images.value.length) return;
   currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length;
@@ -104,12 +98,11 @@ const nextImage = () => {
   currentIndex.value = (currentIndex.value + 1) % images.value.length;
 };
 
-// ✅ Cierra el Lightbox
+
 const closeLightbox = () => {
   lightboxActive.value = false;
 };
 
-// ✅ Cargar datos del JSON
 onMounted(async () => {
   try {
     const response = await fetch("/dataIndividualProject.json");

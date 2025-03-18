@@ -10,7 +10,7 @@
             </div>
         </div>
         <section>
-            <p class="text-2xl lg:text-sm text-gray-200 m-8 mt-1 w-6/10">
+            <p class="text-2xl lg:text-sm text-gray-200 m-8 mt-1 w-9/10 lg:w-6/10">
                 Hey there! I'm a versatile software developer with a strong background in <b>full-stack development, game design, and database management.</b> Passionate about crafting efficient and scalable solutions, I specialize in web development, backend systems, and interactive experiences using modern programming technologies.
                 
                 With experience in <b>JavaScript, Python, C++, C#, PHP, and SQL,</b> I have built dynamic applications, optimized databases, and developed immersive projects in <b>Unreal Engine</b>. My expertise extends to server-side programming with <b>Node.js and MySQL </b>, ensuring seamless integration and performance across different platforms.
@@ -65,7 +65,9 @@
     { title: "SQL", image: "https://img.icons8.com/external-soft-fill-juicy-fish/240/external-sql-coding-and-development-soft-fill-soft-fill-juicy-fish.png" },
     { title: "MySQL", image: "https://img.icons8.com/fluency/240/my-sql.png" },
     { title: "Reality Capture", image: "https://www.modenatechnologies.com/site/wp-content/uploads/2021/08/RealityCapture-Logo.jpg" },
-    { title: "GIT", image: "https://img.icons8.com/color/240/git.png" }
+    { title: "GIT", image: "https://img.icons8.com/color/240/git.png" },
+    { title: "CSS", image: "https://img.icons8.com/ultraviolet/100/css.png" }
+
     ]);
     
     const socialmedia = ref([
