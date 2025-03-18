@@ -3,7 +3,7 @@
         "id": 1,
         "title": "Advanced Architectural Visualization",
         "subtitle": "Archiz in Unreal Engine 5.5",
-        "image": "/imgs/archviztello/m12.png",
+        "image": "/imgs/archviztello/m12.jpg",
         "description": "Archiz in Unreal Engine 5.5",
         "color":"bg-titlep1",
         "tags":["ue","archviz"]
