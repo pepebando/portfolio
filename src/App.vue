@@ -125,11 +125,15 @@ body {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
-
-/* Efecto deslizante opcional */
-.slide-enter-active, .slide-leave-active {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+/* Animaciones para el menú */
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all 0.3s ease;
 }
+.slide-fade-enter-from, .slide-fade-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
 .slide-enter-from {
   transform: translateX(100%);
   opacity: 0;
