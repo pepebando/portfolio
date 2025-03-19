@@ -4,7 +4,7 @@
     <img :src="image" alt="Cover"   class="w-full h-60 lg:h-40 object-cover rounded-lg " />
     
     <!-- Cinta de título -->
-    <div class="  text-white px-2 py-1 rounded-md text-3xl lg:text-sm font-bold w-full min-h-20 lg:h-40" :class="color">
+    <div class=" flex items-center justify-center text-center lg:justify-left lg:text-left text-white px-2 py-1 rounded-md text-3xl lg:text-sm font-bold w-full h-20 lg:h-10 " :class="color">
       {{ title }}
     </div>
     <!-- Botón de Play -->
