@@ -34,7 +34,7 @@
       <div v-if="activeTab === 'Images'" class="text-gray-300">
         <div class="p-6 bg-black min-h-screen text-white">
           <!-- Masonry Wall -->
-          <masonry-wall v-if="images.length" :items="images" :max-columns="1" :gap="16">
+          <masonry-wall v-if="images.length" :items="images" :max-columns="3" :gap="16">
             <template #default="{ item, index }">
               <div class="relative group overflow-hidden rounded-lg cursor-pointer" @click="openLightbox(index)">
                 

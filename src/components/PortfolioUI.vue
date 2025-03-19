@@ -7,7 +7,7 @@
     </div>
     
     <!-- Proyectos Favoritos -->
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+    <div class="grid grid-cols-2 lg:grid-cols-2 gap-4 mt-6">
       <router-link 
       v-for="IndividualFavProject in IndividualFavoritesProjects" 
       :key="IndividualFavProject.id" 
@@ -26,10 +26,10 @@
   </div>
   
   <!-- Título de Proyectos -->
-  <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects</h1>
+  <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects - {{categorytoprint}}</h1>
   
   <!-- Lista de Proyectos Filtrados -->
-  <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 mt-4">
+  <div class="grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
     <router-link 
     v-for="IndividualProject in filteredProjects" 
     :key="IndividualProject.id" 
@@ -62,6 +62,32 @@ const selectedCategory = ref<string | null>(null);
 const IndividualProjects = ref([]);
 const IndividualFavoritesProjects = ref([]);
 const IDsFavoritos = ["1", "2", "3"];
+const categorytoprint = computed(() => {
+  switch (route.query.category) {
+    case "ue":
+    return "Unreal Engine";
+    case "web":
+    return "Web Development";
+    case "games":
+    return "Videogames";
+    case "ar":
+    return "Augmented Reality";
+    case "mr":
+    return "Mixed Reality";
+    case "vr":
+    return "Virtual Reality";
+    case "archviz":
+    return "Archviz";
+    case "py":
+    return "Python";
+    case "app":
+    return "Apps";
+    case "other":
+    return "Others";
+    default:
+    return "All Categories"; // Valor por defecto si no coincide ninguna categoría
+  }
+});
 
 const filteredProjects = computed(() => {
   if (!selectedCategory.value) return IndividualProjects.value;

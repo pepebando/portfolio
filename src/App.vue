@@ -101,17 +101,19 @@ const menuMobile = ref([
 { title: "Contact", link: "/contact", image: "https://img.icons8.com/ffffff/ios-filled/50/email.png" },
 ]);
 const categories = ref([
-{ title: 'Unreal Engine',tags:'ue', image: "https://img.icons8.com/nolan/240/unreal-engine.png" },
-{ title: 'Web', tags:"web", image:"https://img.icons8.com/cute-clipart/64/web.png"},
-{ title: 'Videogames',tags:'games', image: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-gaming-live-streaming-flaticons-flat-flat-icons.png" },
-{ title: 'Augmented Reality',tags:'ar', image: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-augmented-reality-new-media-flaticons-lineal-color-flat-icons-2.png" },
-{ title: 'Mixed Reality',tags:'mr', image: "https://cdn.brandfetch.io/idWvz5T3V7/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" },
-{ title: 'Virtual Reality',tags:'vr', image: "https://img.icons8.com/plasticine/100/virtual-reality.png" },
-{ title: 'Archviz',tags:'archviz', image: "https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/64/external-column-egypt-icongeek26-outline-colour-icongeek26.png" },
-{ title: 'Python',tags:'py', image: "https://cdn.brandfetch.io/idbpOFBgcc/w/398/h/398/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" },
-{ title: 'APPs',tags:'app', image: "https://img.icons8.com/color/48/apple-app-store--v3.png" },
-{ title: 'Others',tags:'other', image: "https://cdn.brandfetch.io/id93sjCX4f/w/300/h/300/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B" }
+{ title: 'All',tags:''},
+{ title: 'Unreal Engine',tags:'ue'},
+{ title: 'Web', tags:"web"},
+{ title: 'Videogames',tags:'games' },
+{ title: 'Augmented Reality',tags:'ar'},
+{ title: 'Mixed Reality',tags:'mr' },
+{ title: 'Virtual Reality',tags:'vr' },
+{ title: 'Archviz',tags:'archviz'},
+{ title: 'Python',tags:'py' },
+{ title: 'APPs',tags:'app' }
 ]);
+
+
 
 
 </script>

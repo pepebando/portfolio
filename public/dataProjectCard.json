@@ -10,20 +10,29 @@
     },
     {
         "id": 2,
-        "title": "Advanced Vue Components",
-        "subtitle": "Advanced Vue Components",
-        "image": "https://placehold.in/1920x1080@2x.png/dark",
-        "description": "Este proyecto trata de 2",
+        "title": "Architectural Visualization",
+        "subtitle": "Archiz in Unreal Engine 5.5",
+        "image": "/imgs/EKS1/2.png",
+        "description": "Archiz in Unreal Engine 5.5",
         "color":"bg-titlep2",
-        "tags":["tag1"]
+        "tags":["ue","archviz"]
     },
     {
         "id": 3,
-        "title": "State Management with Pinia",
-        "subtitle": "Advanced Vue Components",
-        "image": "https://placehold.in/1920x1080@2x.png/dark",
-        "description": "Este proyecto trata de 3",
+        "title": "Chiquita web page",
+        "subtitle": "Wordpress site",
+        "image": "/imgs/chiquita/1.png",
+        "description": "Wordpress site",
         "color":"bg-titlep3",
-        "tags":["tag1","tag4"]
+        "tags":["web","wp"]
+    },
+    {
+        "id": 4,
+        "title": "Mambofoods web page",
+        "subtitle": "Wordpress site",
+        "image": "/imgs/mambo/1.png",
+        "description": "Wordpress site",
+        "color":"bg-titlep4",
+        "tags":["web","wp"]
     }
 ]
