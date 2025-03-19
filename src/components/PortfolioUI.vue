@@ -7,7 +7,7 @@
     </div>
     
     <!-- Proyectos Favoritos -->
-    <div class="grid grid-cols-2 lg:grid-cols-2 gap-4 mt-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
       <router-link 
       v-for="IndividualFavProject in IndividualFavoritesProjects" 
       :key="IndividualFavProject.id" 
