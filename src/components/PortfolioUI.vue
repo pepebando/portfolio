@@ -54,7 +54,7 @@
         once: true,
       }"
       :transition="{
-        delay: 0.3 + IndividualProject.id * 0.2,
+        delay: 0.6 + IndividualProject.id * 0.2,
       }">
   <ProjectCard 
   :title="IndividualProject.title" 
@@ -75,7 +75,7 @@ import { ref, onMounted, computed, watchEffect } from 'vue';
 import { useRoute } from "vue-router";
 import ProjectCard from '/src/components/ProjectCard.vue';
 import ProjectFavoriteCard from '/src/components/ProjectFavoriteCard.vue';
-import { Motion } from '@oku-ui/motion'
+import { Motion } from '@oku-ui/motion';
 
 const route = useRoute();
 const selectedCategory = ref<string | null>(null);

@@ -72,7 +72,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import emailjs from 'emailjs-com';
-import { Motion } from '@oku-ui/motion'
+import { Motion } from '@oku-ui/motion';
 const form = ref({
   name: '',
   email: '',

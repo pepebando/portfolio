@@ -3,7 +3,17 @@
     <main class="w-full">
       <div class="w-full flex ">
         <!-- Sidebar Desktop -->
+
         <div class="w-2/10 p-4 m-2 bg-black flex flex-col rounded-lg hidden lg:block">
+          <Motion
+        :initial="{  x: -140, opacity: 0 }"
+        :in-view="{  x: 0,opacity: 1 }"
+        :in-view-options="{
+          once: true,
+        }"
+        :transition="{
+          delay: 0.2,
+        }">
           <router-link 
           to="/" 
           class="flex items-center space-x-2 mb-4 cursor-pointer transition-opacity hover:opacity-75"
@@ -27,20 +37,41 @@
       <MailIcon class="w-6 h-6" />
       <span>Contact</span>
     </router-link>
-    
+  </Motion>
+  
     <div class="mt-7">
+      <Motion
+        :initial="{  x: -140, opacity: 0 }"
+        :in-view="{  x: 0,opacity: 1 }"
+        :in-view-options="{
+          once: true,
+        }"
+        :transition="{
+          delay: 0.3,
+        }">
       <h2 class="text-lg font-semibold">Categories</h2>
+      </Motion>
       <ul class="mt-1 space-y-1">
         <router-link 
-        v-for="(category, index) in categories" 
+        v-for="(category,index) in categories" 
         :key="index" 
         :to="{ path: '/projects', query: { category: category.tags } }"
         class="transition-opacity hover:opacity-75"
         >
+        <Motion
+        :initial="{  x: -140, opacity: 0 }"
+        :in-view="{  x: 0,opacity: 1 }"
+        :in-view-options="{
+          once: true,
+        }"
+        :transition="{
+          delay: 0.4 + index * 0.1,
+        }">
         <SidebarCard :title="category.title" :image="category.image" />
-      </router-link>
-    </ul>
-  </div>
+      </Motion>
+    </router-link>
+  </ul>
+</div>
 </div>
 <!--Menu Mobile-->
 <div class="relative lg:hidden">
@@ -91,6 +122,7 @@ import { ref } from 'vue';
 import SidebarCard from '/src/components/SidebarCard.vue';
 import MasonryWall from "@yeger/vue-masonry-wall";
 import { HomeIcon,LibraryIcon,MailIcon,MenuIcon } from "lucide-vue-next";
+import { Motion } from '@oku-ui/motion';
 
 const isOpen = ref(false);
 const menuMobile = ref([
