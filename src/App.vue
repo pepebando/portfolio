@@ -57,8 +57,7 @@
         <template v-slot="{ item }">
           <router-link @click="isOpen = false" :to="item.link" class="block p-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">
             <div class="flex items-center space-x-3">
-              <img :src="item.image" alt="icon" class="w-20 h-20 object-contain" />
-              <span class="text-3xl">{{ item.title }}</span>
+              <span class="text-3xl text-center mx-auto">{{ item.title }}</span>
             </div>
           </router-link>
         </template>
@@ -68,8 +67,7 @@
         <template v-slot="{ item }">
           <router-link @click="isOpen = false" :key=item.index :to="{path: '/projects',query:{category: item.tags}}" class="block p-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">
             <div class="flex items-center space-x-3">
-              <img :src="item.image" alt="icon" class="w-20 h-20 object-contain" />
-              <span class="text-3xl">{{ item.title }}</span>
+              <span class="text-3xl text-center mx-auto">{{ item.title }}</span>
             </div>
           </router-link>
         </template>
