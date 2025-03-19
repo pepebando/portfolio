@@ -60,9 +60,9 @@
           
           <!-- Lightbox (Pantalla Completa) -->
           <div v-if="lightboxActive" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-            <button @click="closeLightbox" class="absolute top-4 right-6 text-white text-3xl">&times;</button>
+            <button @click="closeLightbox" class="absolute top-4 right-6 text-white text-5xl lg:text-5xl size-15 lg:size-15 rounded-lg bg-purple-800">&times;</button>
             
-            <button @click="prevImage" class="absolute left-6 text-white text-4xl cursor-pointer">&larr;</button>
+            <button @click="prevImage" class="absolute left-6 text-white cursor-pointer text-5xl lg:text-5xl size-15 lg:size-15 rounded-lg bg-purple-800 opacity-50">&larr;</button>
             
             <!-- Imagen en pantalla completa -->
             <img v-if="currentImage.type === 'imagen'" :src="currentImage.src" :alt="currentImage.alt"
@@ -73,7 +73,7 @@
             controls autoplay class="max-w-full max-h-screen object-contain shadow-lg">
           </video>
           
-          <button @click="nextImage" class="absolute right-6 text-white text-4xl cursor-pointer">&rarr;</button>
+          <button @click="nextImage" class="absolute right-6 text-white text-4xl cursor-pointer text-5xl lg:text-5xl size-15 lg:size-15 rounded-lg bg-purple-800 opacity-50">&rarr;</button>
         </div>
       </div>
     </div>
