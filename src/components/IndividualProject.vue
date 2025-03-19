@@ -27,7 +27,7 @@
     
     <!-- Contenido de Tabs -->
     <div class="mt-4">
-      <div v-if="activeTab === 'Description'" class="text-gray-300">
+      <div v-if="activeTab === 'Description'" class="text-gray-300 w-8/10">
         <p v-for="(line, index) in project.description" :key="index" v-html="line"></p>
       </div>
       
@@ -88,9 +88,9 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, nextTick } from "vue";
 import { useRoute } from "vue-router";
-import { ArrowLeft,PlayIcon } from "lucide-vue-next";
+import { ArrowLeft,PlayIcon, PlayCircle,CheckIcon } from "lucide-vue-next";
 import MasonryWall from "@yeger/vue-masonry-wall";
-import { PlayCircle } from "lucide-vue-next";
+
 
 const route = useRoute();
 const project = ref(null);

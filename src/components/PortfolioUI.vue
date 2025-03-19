@@ -11,7 +11,10 @@
       <router-link 
       v-for="IndividualFavProject in IndividualFavoritesProjects" 
       :key="IndividualFavProject.id" 
-      :to="`/project/${IndividualFavProject.id}`"
+      :to="{
+        path: `/project/${IndividualFavProject.id}`,
+        query: { title: IndividualFavProject.title, subtitle: IndividualFavProject.subtitle }
+      }"
       >
       <ProjectFavoriteCard 
       :title="IndividualFavProject.title" 
@@ -111,7 +114,7 @@ onMounted(async () => {
     
     IndividualProjects.value = projects;
     IndividualFavoritesProjects.value = projects.filter(project => IDsFavoritos.includes(String(project.id)));
-
+    
     
   } catch (error) {
     console.error(" Error al cargar los datos:", error);
