@@ -2,7 +2,7 @@
     <div class="w-full p-4 mb-2 px-6 bg-gradient-to-b from-gray-700 to-black rounded-lg  ">
         <!-- Encabezado con Fondo Degradado -->
         <div class="relative flex items-center p-6">
-            <img class=" w-50 h-50 rounded-full border-4 border-gray-900 " src="/src/assets/Profile.jpg" alt="Profile Picture" />
+            <img class=" w-50 h-50 rounded-full border-4 border-gray-900 " src="/Profile.jpg" alt="Profile Picture" />
             <div class="ml-6">
                 <p class="text-2xl lg:text-sm text-gray-300">Profile</p>
                 <h1 class="text-5xl lg:text-5xl font-bold">José Obando</h1>
