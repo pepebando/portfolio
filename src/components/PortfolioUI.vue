@@ -29,7 +29,7 @@
   <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects - {{categorytoprint}}</h1>
   
   <!-- Lista de Proyectos Filtrados -->
-  <div class="grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
     <router-link 
     v-for="IndividualProject in filteredProjects" 
     :key="IndividualProject.id" 
