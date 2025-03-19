@@ -1,17 +1,19 @@
 <template >
   <div v-if="project" class="p-6 text-white bg-black ">
-    <!-- Sección de portada -->
     <div class="relative bg-gradient-to-b from-purple-800 to-black p-6 rounded-lg   ">
+      <router-link to="/projects" class=" rounded-lg transition ">
+          <ArrowLeft class="size-20 mb-10 lg:size-15"  />
+        </router-link>
       <div class="flex items-center">
         <img :src="project.image" class="rounded-lg w-48 h-48 object-cover shadow-lg " />
         <div class="ml-6">
-          <p class="text-sm text-gray-300">{{route.query.subtitle}}</p>
-          <h1 class="text-4xl font-bold w-9/10 lg:w-7/10">{{route.query.title}}</h1>
+          <p class="text-2xl lg:text-sm text-gray-300">{{route.query.subtitle}}</p>
+          <h1 class="text-5xl lg:text-5xl font-bold w-9/10 lg:w-7/10">{{route.query.title}}</h1>
         </div>
       </div>
     </div>
     
-    <div class="p-6 min-h-screen text-white">
+    <div class="p-6 min-h-screen text-white text-3xl lg:text-xl">
       <!-- Navegación de Tabs -->
       <div class="flex border-b border-gray-700">
         <button
@@ -27,14 +29,14 @@
     
     <!-- Contenido de Tabs -->
     <div class="mt-4">
-      <div v-if="activeTab === 'Description'" class="text-gray-300 w-8/10">
+      <div v-if="activeTab === 'Description'" class="text-3xl lg:text-xl w-8/10">
         <p v-for="(line, index) in project.description" :key="index" v-html="line"></p>
       </div>
       
-      <div v-if="activeTab === 'Images'" class="text-gray-300">
+      <div v-if="activeTab === 'Images'" class="text-2xl lg:text-xl">
         <div class="p-6 bg-black min-h-screen text-white">
           <!-- Masonry Wall -->
-          <masonry-wall v-if="images.length" :items="images" :max-columns="3" :gap="16">
+          <masonry-wall v-if="images.length" :items="images" :min-columns="2" :max-columns="3" :gap="16">
             <template #default="{ item, index }">
               <div class="relative group overflow-hidden rounded-lg cursor-pointer" @click="openLightbox(index)">
                 
@@ -78,11 +80,6 @@
   </div>
 </div>
 </div>
-
-<!-- Botón para regresar -->
-<router-link to="/projects" class="mt-6 inline-block px-4 py-2 text-white rounded-lg transition absolute top-0 left-50">
-  <ArrowLeft class="w-12 h-12 mr-2" />
-</router-link>
 </template>
 
 <script setup lang="ts">
