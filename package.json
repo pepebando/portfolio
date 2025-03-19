@@ -10,6 +10,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@oku-ui/motion": "^0.4.3",
     "@tailwindcss/vite": "^4.0.14",
     "@yeger/vue-masonry-wall": "^5.0.18",
     "emailjs-com": "^3.2.0",

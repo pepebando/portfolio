@@ -1,4 +1,5 @@
 <template>
+    
     <div class=" cursor-pointer opacity-80 flex max-w-full lg:max-w-full items-center gap-x-4 rounded-xl p-5 bg-greyspot hover:bg-greyspotclear ">
         <img :src="image" class="w-60 h-35 lg:w-70 lg:h-42  shrink-0"  alt="Logo" />
         <div>

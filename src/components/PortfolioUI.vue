@@ -5,7 +5,6 @@
     <div class="flex justify-between mt-15 lg:mt-0">
       <h1 class="text-5xl lg:text-3xl font-bold">¡Highlights!</h1>  
     </div>
-    
     <!-- Proyectos Favoritos -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
       <router-link 
@@ -15,36 +14,56 @@
         path: `/project/${IndividualFavProject.id}`,
         query: { title: IndividualFavProject.title, subtitle: IndividualFavProject.subtitle }
       }"
-      >
+      > 
+      <Motion
+      :initial="{  y: 140, opacity: 0, scale: 0.85  }"
+      :in-view="{  y: 0,opacity: 1, }"
+      :in-view-options="{
+        once: true,
+      }"
+      :transition="{
+        delay: 0.1 + IndividualFavProject.id * 0.2,
+      }">
       <ProjectFavoriteCard 
       :title="IndividualFavProject.title" 
       :image="IndividualFavProject.image" 
       :description="IndividualFavProject.description" 
       :color="IndividualFavProject.color" 
       />
-    </router-link>
-  </div>
-  
-  <!-- Título de Proyectos -->
-  <h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects - {{categorytoprint}}</h1>
-  
-  <!-- Lista de Proyectos Filtrados -->
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-    <router-link 
-    v-for="IndividualProject in filteredProjects" 
-    :key="IndividualProject.id" 
-    :to="{
-      path: `/project/${IndividualProject.id}`,
-      query: { title: IndividualProject.title, subtitle: IndividualProject.subtitle }
-    }"
-    >
-    <ProjectCard 
-    :title="IndividualProject.title" 
-    :image="IndividualProject.image" 
-    :description="IndividualProject.description" 
-    :color="IndividualProject.color" 
-    />
+    </Motion>
   </router-link>
+</div>
+
+<!-- Título de Proyectos -->
+<h1 class="text-5xl lg:text-3xl mt-15 font-bold mt-7">Projects - {{categorytoprint}}</h1>
+
+<!-- Lista de Proyectos Filtrados -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+  <router-link 
+  v-for="IndividualProject in filteredProjects" 
+  :key="IndividualProject.id" 
+  :to="{
+    path: `/project/${IndividualProject.id}`,
+    query: { title: IndividualProject.title, subtitle: IndividualProject.subtitle }
+  }"
+  >
+  <Motion
+      :initial="{  y: 140, opacity: 0, scale: 0.85  }"
+      :in-view="{  y: 0,opacity: 1, }"
+      :in-view-options="{
+        once: true,
+      }"
+      :transition="{
+        delay: 0.3 + IndividualProject.id * 0.2,
+      }">
+  <ProjectCard 
+  :title="IndividualProject.title" 
+  :image="IndividualProject.image" 
+  :description="IndividualProject.description" 
+  :color="IndividualProject.color" 
+  />
+  </Motion>
+</router-link>
 </div>
 
 <div class="h-50 block lg:hidden"></div>
@@ -56,6 +75,7 @@ import { ref, onMounted, computed, watchEffect } from 'vue';
 import { useRoute } from "vue-router";
 import ProjectCard from '/src/components/ProjectCard.vue';
 import ProjectFavoriteCard from '/src/components/ProjectFavoriteCard.vue';
+import { Motion } from '@oku-ui/motion'
 
 const route = useRoute();
 const selectedCategory = ref<string | null>(null);
